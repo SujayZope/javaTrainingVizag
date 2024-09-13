@@ -1,0 +1,99 @@
+package infinite.LoginPharmacy;
+
+import java.util.Date;
+import java.util.Map;
+import org.hibernate.HibernateException;
+import javax.faces.bean.*;
+import javax.faces.context.FacesContext;
+
+import org.hibernate.*;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+
+import infinite.HealthPharmacy.EntryptPassword;
+import infinite.HealthPharmacy.Login;
+import infinite.HealthPharmacy.SessionHelper;
+
+@ManagedBean(name = "lDao")
+@SessionScoped
+public class LoginDaoImpl implements LoginDao{
+
+	@Override
+	public String validateMe(Login login) {
+		
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		System.out.println("Login Data " + login);
+		
+		cr.add(Restrictions.eq("userName", login.getUserName()));
+		Login loginFound = (Login) cr.uniqueResult();
+		if (loginFound == null) {
+			sessionMap.put("error", "Invalid Credentials...");
+			return "Login.xhtml?faces-redirect=true";
+		}
+		
+		System.out.println("inside  login"+loginFound);
+		
+		if (loginFound.getFlag().equals("No")) {
+			System.out.println("for old user login");
+			String encr = EntryptPassword.getCode(login.getPassword());
+			cr.add(Restrictions.eq("userName", loginFound.getUserName()));
+			cr.add(Restrictions.eq("password", encr.trim()));
+			cr.setProjection(Projections.rowCount());
+			long count = (Long) cr.uniqueResult();
+			try {
+				if (count == 1) {
+					if ((new Date()).before(loginFound.getPassExpiryTime())) {
+					sessionMap.put("userName", loginFound.getUserName());
+					sessionMap.put("home", "Welcome to dashboard page ...");
+					return "HomePage.xhtml?faces-redirect=true";
+				}
+				else{
+					sessionMap.put("error", "Invalid Credentials...");
+				}
+
+			} catch (HibernateException|ClassCastException e) {
+				e.printStackTrace();
+
+			}
+		}
+		
+		
+		System.out.println(loginFound.getFlag());
+		if (loginFound.getFlag().equals("Yes")) {
+			System.out.println("inside reset 2");
+			String checkOtp=String.valueOf(loginFound.getOtp()) ;
+			if (checkOtp.equals(login.getPassword())) {
+				System.out.println("otp match");
+					sessionMap.put("userName", loginFound.getUserName());
+					Login login2 = searchByLoginUser(loginFound.getUserName());
+					System.out.println("*****************************");
+					sessionMap.put("err", "First reset password.....");
+					return "reset.xhtml?faces-redirect=true";
+					}
+			else {
+				sessionMap.put("error", "Invalid Credentials...");
+			}
+		
+			
+		}
+
+		return "Login.xhtml?faces-redirect=true";
+	}
+
+	@Override
+	public Login searchByLoginUser(String userName) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		cr.add(Restrictions.eq("userName", userName));
+		Login user = (Login) cr.uniqueResult();
+		System.out.println("Searched......");
+
+		return user;
+	}
+	
+	
+}

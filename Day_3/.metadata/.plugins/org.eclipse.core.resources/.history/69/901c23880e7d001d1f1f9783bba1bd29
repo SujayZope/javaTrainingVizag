@@ -1,0 +1,20 @@
+package com.java.employee;
+
+import java.util.List;
+
+public class EmployeeDaoImp1 implements EmployeeDAO{
+
+	@Override
+	public List<Employee> showEmployeeDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String addEmployeeDao(Employee employee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

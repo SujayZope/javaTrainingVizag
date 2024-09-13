@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+<style>
+body {
+	background-image:
+		url("D://java_training//day11 Jsf//SwiggyProject_Jsf//src//main//webapp//2.jpg");
+}
+</style>
+
+<h:form>
+	<center>
+		<br />
+		<br />
+		<br />
+		<br /> User Name :
+		<h:inputText id="userName" value="#{customer.custUserName}" />
+		<br /> <br /> Password :
+		<h:inputSecret value="#{customer.custPassword}" />
+		<br /> <br />
+		<h:commandButton value="Login" action="#{cDao.validateMe(customer)}" />
+		<p>
+			<h:outputLabel value="#{errorMessage}" />
+		</p>
+	</center>
+</h:form>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<link rel="stylesheet" href="styles.css"></link>
+<h:body>
+
+
+
+	<center>
+		<h1>Pharmacy Login</h1>
+		<br /> <br />
+		<h:form>
+
+	User Name : 
+	<h:inputText value="#{login.userName}" styleClass="input-text" />
+			<br />
+			<br /> 
+	Password : 
+	<h:inputSecret value="#{login.passCode}" styleClass="input-text" />
+			<br />
+			<br />
+			<h:commandButton value="Login" action="#{lDao.validateMe(login)}"
+				styleClass="submit-btn" />
+			<br />
+			<br />
+	<nav class="navbar">
+			<h:commandLink id="otp" action="sendOtp.xhtml">
+				<h:outputText value="Login using otp"></h:outputText>
+			</h:commandLink><ul class="navbar-nav" />
+	&nbsp; &nbsp; 
+	
+	<nav class="navbar">
+	<h:commandLink id="forgotpass" action="forgot.xhtml">
+				<h:outputText value="Forgot Password"></h:outputText>
+			</h:commandLink>
+			<ul class="navbar-nav">
+
+
+			<p>
+				<h:outputLabel value="#{errorMessage}" />
+			</p>
+
+
+		</h:form>
+	</center>
+</h:body>
+</html>

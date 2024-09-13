@@ -1,0 +1,26 @@
+package com.java.ejb;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class OyoBean
+ */
+@Stateless
+@LocalBean
+public class OyoBean implements OyoBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public OyoBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public String addRoomDao(Room room) {
+		// TODO Auto-generated method stub
+		return new OyoDaoImpl().addRoomDao(room);
+	}
+
+}

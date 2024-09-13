@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">india@123</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pharmacyintigration</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  		<property name="show_sql">true</property>
+  		<mapping class="com.Medical_Entry.Medical"/>
+  		<mapping class="com.Medical_Entry.Item_Stock"/>
+  		<mapping class="com.Medical_Entry.Medical_Bill"/>
+  		<mapping class="com.Medical_Entry.Procedure"/>
+  		<mapping class="com.Medical_Entry.Provider"/>
+  		<mapping class="com.Medical_Entry.Pharmac"/>
+  		
+  		<mapping class="com.java.pharmacy.Pharmacy"/>
+		<mapping class="com.java.stock.Stock"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,9 @@
+package com.infinite.Collections;
+
+public class SortDemo1 {
+	public static void main(String[] args) {
+		Sortedset names = new TreeSet();
+		
+	}
+
+}

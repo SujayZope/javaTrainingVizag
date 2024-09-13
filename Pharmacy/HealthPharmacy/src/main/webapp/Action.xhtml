@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+.body {
+	font-family: cursive;
+	color: white;
+	
+}
+
+.app {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+}
+
+input[type=text] {
+
+	text-align:center;
+    font-family: cursive;
+	text-shadow: 2px 2px white;
+	background: none;
+	color:black;
+	font-size: 20px;
+	padding: 2px 5px 2px 2px;
+	display:inherit;
+	width: $width;
+	border-radius: 60px;
+	border: 3px solid rgba(0, 0, 255, .2);
+	background-color:white;
+	
+    
+}
+
+.header {
+	font-size: 20px;
+	font-family: cursive;
+	color: #35dc9b, #3857af;
+	text-shadow: 2px 2px skyblue;
+}
+
+.div2 {
+	font-size:20px;
+	border-end-start-radius: 80px 80px;
+	width: 610px;
+	
+	background-color: rgba(0, 0, 0, 0.70);
+	
+}
+</style>
+ 
+	
+ </h:head>
+<h:body
+	style="background-image:url(../image/pharma.jpg);backdrop-filter: blur(2px);">
+
+
+	<div class="body">
+		<h:form>
+			<center>
+				<h1 class="header" style="color:green">Pharmacy Review</h1>
+
+				<div class="div2">
+					Pharmacy Owner Name :  
+
+					<p:inputText id="ownerName" readonly="true" size="40"
+						value="#{pharmacyInfo.ownerName}"></p:inputText>
+
+
+					Gender :
+					<p:inputText id="gender" readonly="true" size="40"
+						value="#{pharmacyInfo.gender}"></p:inputText>
+
+
+
+					Education :
+					<p:inputText id="degree" readonly="true" size="40"
+						value="#{pharmacyInfo.degree}"></p:inputText>
+
+
+					Passing Year :
+					<p:inputText id="passingYear" readonly="true" size="40"
+						value="#{pharmacyInfo.passingDate}">
+						<f:convertDateTime pattern="dd-MM-yyyy" />
+					</p:inputText>
+
+					Pharmacy Name :  
+					<p:inputText id="pharmaName" readonly="true" size="40"
+						value="#{pharmacyInfo.pharmaName}"></p:inputText>
+
+
+					License Type :  
+					<p:inputText id="licenceType" readonly="true" size="40"
+						value="#{pharmacyInfo.licenceType}"></p:inputText>
+
+
+					LicenceNo:
+					<p:inputText id="licenceNo" readonly="true" size="40"
+						value="#{pharmacyInfo.licenceNo}"></p:inputText>
+
+					Email :  
+					<p:inputText id="email" readonly="true" size="40"
+						value="#{pharmacyInfo.email}"></p:inputText>
+
+
+					Phone No :
+
+					<p:inputText id="phoneNo" readonly="true" size="40"
+						value="#{pharmacyInfo.phoneNo}"></p:inputText>
+
+					PAN Card Number :
+
+					<p:inputText id="panCardNo" readonly="true" size="40"
+						value="#{pharmacyInfo.panCardNo}"></p:inputText>
+
+
+					GST No :
+
+					<p:inputText id="gstNo" readonly="true" size="40"
+						value="#{pharmacyInfo.gstNo}"></p:inputText>
+
+					City :
+
+					<p:inputText id="address" readonly="true" size="40"
+						value="#{pharmacyInfo.address}"></p:inputText>
+
+					<br />
+
+					<p:commandButton value="Validate"
+						action="#{cDao.validationDao(pharmacyInfo)}" styleClass="app"
+						ajax="false">
+					</p:commandButton>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					<p:commandButton value="Cancel" action="PendingPharmaList.xhtml"
+						styleClass="app">
+
+					</p:commandButton>
+					<br /> <br />
+				</div>
+			</center>
+		</h:form>
+		<br /> <br />
+	</div>
+</h:body>
+</html>
+

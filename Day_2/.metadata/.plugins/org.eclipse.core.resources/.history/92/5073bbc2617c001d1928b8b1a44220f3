@@ -1,0 +1,25 @@
+package com.infinite.Collections;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class SortStudent {
+
+	public static void main(String[] args) {
+		SortedSet names = new TreeSet();
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		names.add(new Student(1,"Chetan","Pune",9.1));
+		
+		System.out.println("Names are ");
+		for(Object object : names){
+			Student student =(Student)object;
+			System.out.println(object);
+		}
+		
+	}
+}

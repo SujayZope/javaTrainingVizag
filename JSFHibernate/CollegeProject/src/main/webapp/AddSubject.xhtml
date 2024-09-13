@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+
+	<h1>Add Subject</h1>
+
+	<h:form>
+
+ Subject Names: 
+               	<h:selectOneMenu value="#{subjects.subject}"
+			onchange="submit()"
+			valueChangeListener="#{sDao.marksLocaleCodeChanged}">
+			<f:selectItems value="#{sDao.subjectsList}" />
+		</h:selectOneMenu>
+		<br />
+		<br />  
+
+Theory:
+ <h:inputText id="theory" value="#{sDao.theory}" readonly="true" />
+		<br />
+		<br />
+Practical:
+ <h:inputText id="practical" value="#{sDao.practical}" readonly="true" />
+		<br />
+		<br />
+  
+
+Year:
+  <h:inputText type="number" id="year" value="#{subjects.year}" />
+		<br />
+		<br />   
+  
+Instructor:
+  <h:inputText id="instructor" value="#{subjects.instructor}" />
+		<br />
+		<br />
+
+		<h:commandButton value="Submit"
+			action="#{sDao.AddSubject(sDao.localeCode,sDao.theory,sDao.practical,subjects)}" />
+
+	</h:form>
+
+</h:body>
+</html>

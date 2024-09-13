@@ -1,0 +1,91 @@
+<interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:37:26.495 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os-arch</eventId>
+  <details>x86_64</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:37:26.519 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os</eventId>
+  <details>win32</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:37:26.526 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: org.eclipse.core.runtime</eventId>
+  <details>3.11.1.v20150903-1804</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:37:26.527 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: connector-version</eventId>
+  <details>3.2.5.v20150427</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:37:26.530 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: plugins</eventId>
+  <details>{jira.ui=3.2.5.v20150427, jira.core=3.2.5.v20150427, monitor.core=3.2.5.v20150427, monitor.ui=3.2.5.v20150427, commons.core=3.2.5.v20150427, commons.ui=3.2.5.v20150427, branding.ui=3.2.5.v20150427}</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:49:54.117 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os-arch</eventId>
+  <details>x86_64</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:49:54.133 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os</eventId>
+  <details>win32</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:49:54.135 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: org.eclipse.core.runtime</eventId>
+  <details>3.11.1.v20150903-1804</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:49:54.136 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: connector-version</eventId>
+  <details>3.2.5.v20150427</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 10:49:54.141 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: plugins</eventId>
+  <details>{jira.ui=3.2.5.v20150427, jira.core=3.2.5.v20150427, monitor.core=3.2.5.v20150427, monitor.ui=3.2.5.v20150427, commons.core=3.2.5.v20150427, commons.ui=3.2.5.v20150427, branding.ui=3.2.5.v20150427}</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 14:18:42.217 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os-arch</eventId>
+  <details>x86_64</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 14:18:42.459 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os</eventId>
+  <details>win32</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 14:18:42.460 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: org.eclipse.core.runtime</eventId>
+  <details>3.11.1.v20150903-1804</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 14:18:42.461 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: connector-version</eventId>
+  <details>3.2.5.v20150427</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2023-03-31 14:18:42.468 IST</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: plugins</eventId>
+  <details>{jira.ui=3.2.5.v20150427, jira.core=3.2.5.v20150427, monitor.core=3.2.5.v20150427, monitor.ui=3.2.5.v20150427, commons.core=3.2.5.v20150427, commons.ui=3.2.5.v20150427, branding.ui=3.2.5.v20150427}</details>
+</interactionEvent>

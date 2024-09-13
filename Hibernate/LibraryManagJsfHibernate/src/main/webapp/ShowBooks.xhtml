@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+
+      <center>
+      
+             <h2>Books Record</h2>
+      
+      </center>
+
+      <h:form>
+      
+            <h:dataTable value="#{dao.showBooksDao()}" var="e" border="3">
+            
+                     <h:column >
+                     
+                            <f:facet name="header">Id</f:facet>
+                            <h:outputLabel id="Id" value="#{e.Id}"></h:outputLabel>
+                     
+                     </h:column>
+                     
+                     
+                      <h:column>
+                     
+                            <f:facet name="header">Name</f:facet>
+                            <h:outputLabel id="Name" value="#{e.Name}"></h:outputLabel>
+                     
+                     </h:column>
+                     
+                
+                      <h:column>
+                     
+                            <f:facet name="header">Author</f:facet>
+                            <h:outputLabel id="Author" value="#{e.Author}"></h:outputLabel>
+                     
+                     </h:column>
+            
+                   
+                       <h:column>
+                     
+                            <f:facet name="header">Edition</f:facet>
+                            <h:outputLabel id="Edition" value="#{e.Edition}"></h:outputLabel>
+                     
+                     </h:column>
+            
+             
+                      <h:column>
+                     
+                            <f:facet name="header">Dept</f:facet>
+                            <h:outputLabel id="Dept" value="#{e.Dept}"></h:outputLabel>
+                     
+                     </h:column>
+                     
+                     
+                      <h:column>
+                     
+                            <f:facet name="header">TotalBooks</f:facet>
+                            <h:outputLabel id="TotalBooks" value="#{e.TotalBooks}"></h:outputLabel>
+                     
+                     </h:column>
+                     
+            </h:dataTable>
+      
+      </h:form>
+
+</h:body>      
+      
+</html>

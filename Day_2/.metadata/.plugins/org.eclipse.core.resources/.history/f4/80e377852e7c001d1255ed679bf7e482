@@ -1,0 +1,27 @@
+package com.infinite.day_2;
+
+public class BoxRuntime {
+	public void show(Object ob){
+		System.out.println(ob.getClass().getSimpleName());
+		if(type.equals("Integer")){
+			System.out.println("Integer Casting...");
+			int x=(Integer)ob;
+		}
+		if(type.equals("String")){
+			System.out.println("String Casting...");
+			int x=(String)ob;
+		}
+		if(type.equals("double")){
+			System.out.println("Double Casting...");
+			int x=(double)ob;
+		}
+		
+	}
+	public static void main(String[] args) {
+		int x=12;
+		double b=12.5;
+		String str="Welcome";
+		
+	}
+
+}

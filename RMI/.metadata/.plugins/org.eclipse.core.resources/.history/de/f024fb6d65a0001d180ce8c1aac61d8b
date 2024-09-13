@@ -1,0 +1,24 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class CalcImpl extends UnicastRemoteObject implements Calc {
+
+	@Override
+	public int sum(int x, int y) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int sub(int x, int y) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int multi(int x, int y) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

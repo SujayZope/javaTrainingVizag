@@ -1,0 +1,8 @@
+package com.java.ejb;
+
+
+@Entity
+@Table(name="booking")
+public class Booking {
+
+}

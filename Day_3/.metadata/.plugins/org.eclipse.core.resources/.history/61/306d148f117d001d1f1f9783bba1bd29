@@ -1,0 +1,22 @@
+package com.java.employee;
+
+public class EmployeeBAL {
+
+	static EmployeeDAO dao;
+	static StringBuilder sb;
+	
+	static{
+		dao = new EmployeeDaoImp1();
+		sb = new StringBuilder();
+	}
+	
+	public boolean doValid(Employee employee){
+		boolean isValid = true;
+		if (employee.getEmpno() <= 0){
+			sb.append("Employee No cannot be Zero or negative...\n");
+			isValid = false;
+		}
+		return isValid;
+		
+	}
+}

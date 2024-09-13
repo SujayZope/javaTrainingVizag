@@ -1,0 +1,23 @@
+INDEX VERSION 1.132
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2042160596.index
+\LibraryManagement\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2180474328.index
+\JstlDemo\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2215167958.index
+\BankProject\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1955364039.index
+\laxman\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\473296000.index
+\JspJdbc\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3629976051.index
+\jspBeanDemo\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1773313286.index
+\Inventory\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\65403730.index
+\ServeletDemos\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1022949425.index
+\SessionMngSy\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1456495466.index
+\LeaveManagement\src\main\java
+D:\Java_Training\Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\793674385.index
+\EmployeeProject\src\main\java

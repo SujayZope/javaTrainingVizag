@@ -1,0 +1,38 @@
+package com.java.employee;
+
+public class EmployeeBAL {
+
+	static EmployeeDAO dao;
+	static StringBuilder sb;
+	
+	static{
+		dao = new EmployeeDaoImp1();
+		sb = new StringBuilder();
+	}
+	
+	public boolean doValid(Employee employee){
+		boolean isValid = true;
+		if (employee.getEmpno() <= 0){
+			sb.append("Employee No cannot be Zero or negative...\n");
+			isValid = false;
+		}
+		if (employee.getName().length() < 5){
+			sb.append("Employee Name Contains Min. 5 chars...\n");
+			isValid = false;
+		}
+		if(employee.getDept().length() < 3){
+			sb.append("Department Contains Min. 3 chars...\n");
+			isValid = false;	
+		}
+		if(employee.getDesig().length() < 4){
+			sb.append("Designation Contains Min. 4 chars...\n");
+			isValid = false;
+		}
+		if(employee.getBasic(). < 10000 || employee.getBasic() > 90000){
+			sb.append("Department Contains Min. 3 chars...\n");
+			isValid = false;	
+		}
+		return isValid;
+		
+	}
+}

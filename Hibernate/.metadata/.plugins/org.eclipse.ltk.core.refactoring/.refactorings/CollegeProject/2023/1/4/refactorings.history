@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CollegeProject/src/main/webapp/addRestaurant.xhtml&apos; to &apos;addCourse.xhtml&apos;" description="Rename resource &apos;addRestaurant.xhtml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/addRestaurant.xhtml" name="addCourse.xhtml" stamp="1674535929674" updateReferences="true"/>
+</session>

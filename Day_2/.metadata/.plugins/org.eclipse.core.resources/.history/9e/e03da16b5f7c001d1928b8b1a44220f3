@@ -1,0 +1,11 @@
+package com.infinite.Collections;
+
+import java.util.SortedSet;
+
+public class SortDemo1 {
+	public static void main(String[] args) {
+		SortedList names = new TreeSet();
+		
+	}
+
+}

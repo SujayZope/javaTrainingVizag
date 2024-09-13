@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HealthPharmacy/src/main/webapp/PharmacyHome.html&apos; to &apos;PharmacyHome.xhtml&apos;" description="Rename resource &apos;PharmacyHome.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/PharmacyHome.html" name="PharmacyHome.xhtml" stamp="1680254157127" updateReferences="true"/>
+</session>

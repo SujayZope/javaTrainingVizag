@@ -1,0 +1,5 @@
+package com.infinite.Interface.Practice;
+
+public class Test implements IOne,ITwo,IThree {
+
+}

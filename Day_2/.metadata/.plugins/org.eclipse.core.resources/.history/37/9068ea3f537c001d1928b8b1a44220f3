@@ -1,0 +1,8 @@
+package com.infinite.Interface;
+
+public class IntEx {
+	
+	public static void main(String[] args) {
+		Itraining[] arr= new Itraining() 
+	}
+}

@@ -1,0 +1,13 @@
+package com.java.ejb;
+
+public class ShowRoom {
+
+	public static void main(String[] args) {
+		
+		
+		for (Room room : roomList) {
+			System.out.println(agent);
+		}
+	}
+	
+}

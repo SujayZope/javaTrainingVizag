@@ -1,0 +1,34 @@
+package com.rmi.crud;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.List;
+import java.util.Scanner;
+
+public class ClientProg {
+
+	public static void main(String[] args) {
+		AgentDao dao= new AgentDaoImp();
+		List<Agent> agentList;
+
+		try {
+			AgentDao ADao = (AgentDao) Naming.lookup("localhost");
+			System.out.println("Client Programming...");
+			agentList = dao.showAgentDao();
+			for(Agent agent : agentList){
+				System.out.println(agent);
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,52 @@
+package com.java.pms;
+
+import java.util.Date;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Projections;
+
+@ManagedBean(name = "pDao")
+@SessionScoped
+public class PolicyDaoImpl implements PolicyDAO {
+
+	@Override
+	public String addPolicy(Policy policy) {
+		policy.setPid(generatePolicyID());
+		policy.setStatus("ACTIVE");
+		policy.setBuydate(new Date());
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Transaction trans = session.beginTransaction();
+		session.save(policy);
+		trans.commit();
+		return "ShowPolicy.xhtml?faces-redirect=true";
+
+	}
+
+	private String generatePolicyID() {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr=session.createCriteria(Policy.class);
+		cr.setProjection(Projections.max("pid"));
+		String str=(String)cr.uniqueResult();
+		String sub = str.substring(1);
+		int pid = Integer.parseInt(sub);
+		pid++;
+		return String.format("P%03d", pid);
+
+	}
+
+	@Override
+	public List<Policy> ShowPolicy() {
+	SessionFactory sf = SessionHelper.getConnection();
+	Session session = sf.openSession();
+	Criteria cr = session.createCriteria(Policy.class);
+	List<Policy> list = cr.list();
+	return list;
+	}
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous" />
+	<style>
+body {
+
+	background : url("image/PharmacyHome_image.jpg");
+	/* background-image:
+		url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c); */
+
+/* 	 background-color: #f5ffce; */
+ 
+}
+</style>
+</h:head>
+<h:form><br />
+	<h:inputText value="#{sDao.localCode}"
+		style="width: 200px; height: 45px;
+	border-radius: 4px;  border: 1px solid black"
+		valueChangeListener="#{sDao.searchSelect}" />&nbsp;
+	<h:commandButton action="SearchItem.xhtml" value="Enter Pharamacy Name"
+		class="btn btn-primary" />
+	<br />
+	<p:dataTable value="#{sDao.getLocalCode()}" >
+		<p:column>
+			<b>Pharmacy Name : 
+			<h:outputText value="#{sDao.localCode}" /><br/>
+			Pharma Id :
+			<h:outputText value="#{sDao.searchpharmaIdByName(sDao.localCode)}" /></b>
+		</p:column><br/>
+	</p:dataTable>
+	<center>
+		<p:dataTable value="#{sDao.searchPharmName(sDao.localCode)}" var="e"
+			paginator="true" rows="7" rowsPerPageTemplate="7,10,15"
+			paginatorPosition="bottom">
+
+			<!-- <p:column headerText="Pharmacy Name">
+				<h:outputText value="#{e.pharmName}" />
+			</p:column> -->
+			<p:column headerText="Item Id" sortBy="#{e.itemId}">
+					<h:outputText value="#{e.itemId}" />
+				</p:column>
+			<p:column headerText="Items" filterBy="#{e.itemName}">
+				<h:outputText value="#{e.itemName}" />
+			</p:column>
+			<p:column headerText="Quantity">
+				<f:facet name="Quantity">Quantity</f:facet>
+				<h:panelGroup rendered="#{sDao.quantity(e.quantity)==1}">
+					<p style="color: red;">
+						<h:outputText value="#{e.quantity}" />
+					</p>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{sDao.quantity(e.quantity)==0}">
+					<h:outputText value="#{e.quantity}" />
+				</h:panelGroup>
+			</p:column>
+
+			<p:column headerText="Price per/item">
+				<h:outputText value="#{e.price}" />
+			</p:column>
+
+			<p:column headerText="Manufatcuring Date">
+				<h:outputText value="#{e.mfgDate}">
+					<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+				</h:outputText>
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Expiry Date</f:facet>
+				<h:panelGroup
+					rendered="#{sDao.expiryDays(e.expiryDate,e.mfgDate)==1}">
+					<p style="color: red;">
+						<h:outputText value="#{e.expiryDate}">
+							<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+						</h:outputText>
+					</p>
+				</h:panelGroup>
+				<h:panelGroup
+					rendered="#{sDao.expiryDays(e.expiryDate,e.mfgDate)==0}">
+					<h:outputText value="#{e.expiryDate}">
+						<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+					</h:outputText>
+				</h:panelGroup>
+			</p:column> 
+			
+			<p:column headerText="Vendor">
+				<h:outputText value="#{e.vendor}" />
+			</p:column>
+
+			<p:column headerText="Update">
+				<p:commandButton action="#{sDao.actionOnUpdate(e.itemId)}"
+					value="Update" style="color:blue">
+				</p:commandButton>
+			</p:column>
+
+			<p:column headerText="Delete">
+				<p:commandButton action="#{sDao.deleteStock(e)}" value="Delete"
+					style="color:red">
+				</p:commandButton>
+			</p:column>
+		</p:dataTable><br/>
+			<h:commandButton action="AddStock" value="Add New Stock"
+				class="btn btn-success" /><br/>
+				<br/>
+	</center>
+</h:form>
+</html>

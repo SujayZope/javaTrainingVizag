@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;RmiCrud/src/main/java/com.rmi.crud&apos;&#x0D;&#x0A;- Original project: &apos;RmiCalc&apos;&#x0D;&#x0A;- Destination element: &apos;RmiCrud/src/main/java/com.rmi.crud&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ServerProg.java&#x0D;&#x0A;     ClientProg.java" description="Copy compilation units" destination="=RmiCrud/src\/main\/java&lt;com.rmi.crud" element1="/src&lt;{ServerProg.java" element2="/src&lt;{ClientProg.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1675071867010" units="2" version="1.0"/>
+</session>

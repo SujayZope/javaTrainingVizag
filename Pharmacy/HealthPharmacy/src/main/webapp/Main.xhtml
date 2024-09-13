@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+		crossorigin="anonymous" />
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	
+	<style>
+body {
+	background-image: url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c);
+	  display: flex;
+	justify-content: center;
+	margin-top: 5%;
+	align-items: center;
+	  
+	  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-attachment: fixed;
+}
+
+.Full {
+	background: #ffffff;
+	height: 180px;
+	width: 600px;
+	
+}
+
+
+
+</style>
+	<h:body>
+
+		<f:facet name="last">
+			<h:outputStylesheet library="default" name="css/style.css" />
+		</f:facet>
+		<div class="Full">
+			<center>
+			<br />
+				<h2>PHARMACY ENROLLMENT</h2>
+				<br />
+
+				<h:form>
+
+					
+
+	
+					<h:commandLink id="newuser" action="AddPharmacyDetail.xhtml"
+						class="btn btn-success">
+						<h:outputText value="Register New Pharmacy"></h:outputText>
+					</h:commandLink>
+	&nbsp; &nbsp; 
+	
+	<h:commandLink id="olduser" action="SendOtp.xhtml"
+						class="btn btn-danger">
+						<h:outputText value="Update Pharmacy"></h:outputText>
+					</h:commandLink>
+						<h4>
+							<!-- <h:outputText value="#{Dao.errmsg}" style="color: red;" /> -->
+						</h4>
+				</h:form>
+			</center>
+	</div>
+	</h:body>
+</h:head>
+</html>

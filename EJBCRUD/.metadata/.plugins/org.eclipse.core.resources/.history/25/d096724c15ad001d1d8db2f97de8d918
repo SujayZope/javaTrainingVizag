@@ -1,0 +1,11 @@
+package com.java.ejb;
+
+public class OyoDaoImpl implements OyoDao {
+
+	@Override
+	public String addRoomDao(Room room) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

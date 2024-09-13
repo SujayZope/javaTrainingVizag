@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Username</title>
+	<style>
+body {
+	background-image:
+		url("https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg");
+}
+
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+
+form {
+background: #ffffff;
+	display: block;
+	font-family: arial;
+	width: 600px;
+	color: black;
+	font-style: normal;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 6%;
+	font-weight: bold;
+	 
+}
+</style>
+</h:head>
+<h:body>
+	<center>
+		<h:panelGrid columns="2" border="1" cellpadding="10" cellspacing="1"
+			style="margin-top:130px">
+
+
+			<f:facet name="last">
+				<h:outputStylesheet library="default" name="css/style.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/all.min-jsf.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+			</f:facet>
+
+
+
+
+
+
+			<h:form>
+	
+
+	User Name :
+<p:inputText id="usernametext" required="true" label="Username"
+					requiredMessage="Please enter UserName." value="#{login.userName}"
+					size="35">
+					<f:validator
+						validatorId="infinite.LoginPharmacy.userNameValidator" />
+				</p:inputText>
+				<p:watermark for="usernametext" value="Enter UserName " />
+				<p:message for="usernametext" />
+				<br />
+
+
+				<h:outputLabel value="#{lDao.errmsg}"
+					style="color: red; font-weight: bold;" /><br/>
+					<h:outputLabel value="#{err}"
+					style="color: red; font-weight: bold;" />
+				<br/><br/>
+
+				<p:commandButton value="Search" style="margin-left:200px"
+					action="#{lDao.checkUsername(login.userName)}" ajax="false" />
+
+
+
+
+			</h:form>
+		</h:panelGrid>
+	</center>
+
+
+
+</h:body>
+</html>

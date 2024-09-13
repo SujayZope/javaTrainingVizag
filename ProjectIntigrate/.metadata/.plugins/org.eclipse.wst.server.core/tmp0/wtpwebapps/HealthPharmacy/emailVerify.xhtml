@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Check Email</title>
+	<style>
+ body {
+	background-image:
+		url("https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg");
+}
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+form{display: block;font-family: arial;width:
+ 450px;color: black;font-style:normal;padding:8px;margin:
+  10px;margin-left:30%;font-weight:bold;
+   }
+
+</style>
+</h:head>
+
+
+	<h:body>
+	<center>
+	<h:panelGrid columns="2" border="1" cellpadding="10" cellspacing="1" style="margin-top:50px"  bgcolor="white">
+		<h:form>
+		
+		<h3> Send otp on email</h3>
+		<h5> <h:outputLabel value="#{maskIdSession}"></h:outputLabel></h5>
+		
+				<p:commandButton value="Send OTP" action="#{lDao.sendOtp(ownwerdetailsession.email,loginsession.userName)}" style="margin-left:30px"></p:commandButton>
+		<br/><br/>
+			<h:commandLink id="image-link-id1" action="checkUName.xhtml">  
+           <p:commandButton value="Not you?"  style="margin-left:30px" >
+           </p:commandButton>
+           </h:commandLink>
+		  
+		   </h:form>
+		   </h:panelGrid>
+		   </center>
+	</h:body>
+</html>

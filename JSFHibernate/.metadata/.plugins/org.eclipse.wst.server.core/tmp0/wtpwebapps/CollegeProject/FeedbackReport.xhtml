@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+
+	<h1>Feedback Report</h1>
+
+	<h:form>
+
+    Instructor: 
+               	<h:selectOneMenu value="#{feedback.instructor}"
+			onchange="submit()"
+			valueChangeListener="#{sDao.instLocaleCodeChanged}">
+			<f:selectItems value="#{fDao.searchInstructor()}" />
+		</h:selectOneMenu>
+		<br />
+		<br />  
+
+    Subject: 
+               	<h:selectOneMenu value="#{feedback.subject}">
+			<f:selectItems value="#{fDao.showSubjectNames(feedback.instructor)}" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+
+
+
+		<h:commandButton value="Submit"
+			action="#{fDao.showFeedback(feedback)}" />
+
+	</h:form>
+
+</h:body>
+</html>

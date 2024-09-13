@@ -1,0 +1,26 @@
+package com.java.employee;
+
+public class EmployeeBAL {
+
+	static EmployeeDAO dao;
+	static StringBuilder sb;
+	
+	static{
+		dao = new EmployeeDaoImp1();
+		sb = new StringBuilder();
+	}
+	
+	public boolean doValid(Employee employee){
+		boolean isValid = true;
+		if (employee.getEmpno() <= 0){
+			sb.append("Employee No cannot be Zero or negative...\n");
+			isValid = false;
+		}
+		if (employee.getName().length() < 5){
+			sb.append("Employee Name Contains Min. 5 chars...\n");
+			isValid = false;
+		}
+		return isValid;
+		
+	}
+}

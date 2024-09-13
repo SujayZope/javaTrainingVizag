@@ -1,0 +1,10 @@
+package com.java.ejb;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="booking")
+public class Booking {
+
+}

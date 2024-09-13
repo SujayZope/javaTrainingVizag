@@ -1,0 +1,12 @@
+package com.java.ejb;
+
+import javax.naming.InitialContext;
+
+public class MainProg {
+
+	public static void main(String[] args) {
+		HelloWordBeanRemote service = 
+				(HelloWordBeanRemote) new InitialContext().lookup("HelloWordBean/remote");
+		System.out.println(service.sayHello());
+	}
+}

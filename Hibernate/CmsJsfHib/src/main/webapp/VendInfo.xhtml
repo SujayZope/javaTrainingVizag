@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:form>
+
+	<ui:include src="/VendMenu.xhtml" />
+	
+	<br/>
+	Vendor Id : 
+	<b> <h:outputLabel value="#{vendorInfo.venId}" />
+	</b>
+	<br />
+	Vendor Name : 
+	<b> <h:outputLabel value="#{vendorInfo.venName}" />
+	</b>
+	<br />
+	
+	Vendor Phone : 
+	<b> 
+	<h:outputLabel value="#{vendorInfo.venPhoneNo}" />
+	</b>
+	<br />
+	
+	
+	
+	Vendor User Name : 
+	<b> <h:outputLabel value="#{vendorInfo.venUserName}" />
+	</b>
+	<br />
+	
+	Vendor Password : 
+	<b> <h:outputLabel value="#{vendorInfo.venPassword}" />
+	</b>
+	<br />
+	Vendor Email : 
+	<b> <h:outputLabel value="#{vendorInfo.venEmail}" />
+	</b>
+	<br />
+
+
+</h:form>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:form>
+	<h:selectOneMenu value="#{aDao.localCode}" onchange="submit()"
+	valueChangeListener="#{aDao.agentLocaleCodeChanged}">
+    <f:selectItems value="#{aDao.getGenders()}"/>
+</h:selectOneMenu>
+Selected value is : 
+<h:outputText value="#{aDao.localCode}"/>
+        <h:dataTable value="#{aDao.getAgentListByGender(aDao.localCode)}" var="e" border="3">
+        	    <h:column>
+                    <f:facet name="header">Agent Id</f:facet>
+                    <h:outputText value="#{a.agentid}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Agent Name</f:facet>
+                    <h:outputText value="#{a.name}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Agent City</f:facet>
+                    <h:outputText value="#{a.city}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Agent Gender</f:facet>
+                    <h:outputText value="#{a.gender}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Agent Marital Status</f:facet>
+                    <h:outputText value="#{a.maritalstatus}"/>
+                </h:column>
+                 
+                <h:column>
+                    <f:facet name="header">Premium</f:facet>
+                    <h:outputText value="#{a.premium}"/>
+                </h:column>
+        	  
+                
+        </h:dataTable>
+
+        </h:form>
+</html>

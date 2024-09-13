@@ -1,0 +1,9 @@
+package com.infinite.Collections;
+
+public class Employee {
+	int empno;
+	String name;
+	double basic;
+	
+
+}

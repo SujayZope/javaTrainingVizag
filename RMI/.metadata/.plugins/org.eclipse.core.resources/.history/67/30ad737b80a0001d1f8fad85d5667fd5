@@ -1,0 +1,7 @@
+package com.rmi.crud;
+
+import java.rmi.Remote;
+
+public interface Employee extends Remote {
+
+}

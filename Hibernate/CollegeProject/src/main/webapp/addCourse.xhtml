@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<h1>Add Course</h1>
+	<h:form>
+        Course Duration : 
+        <h:inputText value="#{course.duration}" />
+		<br />
+		<br />
+        Course Start Date : 
+		
+		<h:inputText id="sdate" value="#{course.sDate}"
+			converterMessage="Please provide date in dd/mm/yyyy format">
+			<f:convertDateTime pattern="dd/mm/yyyy" />
+		</h:inputText>
+		<br />
+			<br />
+        Course End Date :  
+		<h:inputText id="edate" value="#{course.eDate}"
+			converterMessage="Please provide date in dd/mm/yyyy format">
+			<f:convertDateTime pattern="dd/mm/yyyy" />
+		</h:inputText>
+		<br />
+		<br />
+		HOD Name :  
+		<h:inputText value="#{course.hod}" />
+		<br />
+		<br />
+		<h:commandButton value="Insert" action="#{cDao.addCourseDao(course)}" />
+
+	</h:form>
+</h:body>
+</html>

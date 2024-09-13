@@ -1,0 +1,18 @@
+package com.java.ejb;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class HelloWordBean
+ */
+@Stateless
+public class HelloWordBean implements HelloWordBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public HelloWordBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

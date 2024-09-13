@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+
+	<h1>Give Feedback</h1>
+
+	<h:form>
+	
+	Student Name:
+ <h:inputText id="studentName" value="#{feedback.studentName}" />
+		<br />
+		<br />
+
+    Instructor: 
+               	<h:selectOneMenu value="#{feedback.instructor}"
+			onchange="submit()"
+			valueChangeListener="#{sDao.instLocaleCodeChanged}">
+			<f:selectItems value="#{fDao.searchInstructor()}" />
+		</h:selectOneMenu>
+		<br />
+		<br />  
+
+    Subject: 
+               	<h:selectOneMenu value="#{feedback.subject}">
+			<f:selectItems value="#{fDao.showSubjectNames(feedback.instructor)}" />
+		</h:selectOneMenu>
+		<br />
+		<br />  
+
+    FeedBack:
+    <h:selectOneRadio value="#{feedback.fbValue}">
+			<f:selectItem itemValue="EXCELLENT" itemLabel="EXCELLENT" />
+			<f:selectItem itemValue="GOOD" itemLabel="GOOD" />
+			<f:selectItem itemValue="ADEQUATE" itemLabel="ADEQUATE" />
+			<f:selectItem itemValue="INADEQUATE" itemLabel="INADEQUATE" />
+		</h:selectOneRadio>
+
+
+		<h:commandButton value="Submit"
+			action="#{fDao.giveFeedback(feedback)}" />
+
+	</h:form>
+
+</h:body>
+</html>

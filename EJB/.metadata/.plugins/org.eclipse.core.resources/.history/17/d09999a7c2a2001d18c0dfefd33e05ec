@@ -1,0 +1,21 @@
+package com.java.ejb;
+
+import java.util.Properties;
+
+
+
+
+public class MainProg {
+
+	public static void main(String[] args) {
+			Properties p = new Properties();
+			p.put("java.naming.factory.initial", "org.jnp.interfaces.NamingContextFactory");
+			p.put("java.naming.factory.url.pkgs", "org.jboss.naming:org.jnp.interfaces");
+			p.put("java.naming.provider.url", "localhost:1099");
+			
+				HelloWordBeanRemote service = 
+						(HelloWordBeanRemote) new InitialContext().lookup("HelloWordBean/remote");
+				System.out.println(service.sayHello());
+			
+	}
+}

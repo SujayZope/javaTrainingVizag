@@ -1,0 +1,9 @@
+INDEX VERSION 1.3+D:\Java_Training\EJBCRUD\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3223427037.index
+2345325970.index
+3914686338.index
+4265792529.index
+834956669.index
+4152470125.index
+1257182981.index
+2993069643.index

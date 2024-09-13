@@ -1,0 +1,16 @@
+package com.infinite.Collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListEmployee {
+	
+	public static void main(String[] args) {
+		
+		List empList = new ArrayList();
+		empList.add(new Employee(1,"Chetan",83456))
+		
+		
+	}
+
+}

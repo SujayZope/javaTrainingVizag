@@ -1,0 +1,10 @@
+package com.infinite.sup;
+
+public class First {
+	
+	
+	public void show(){
+		
+	}
+
+}

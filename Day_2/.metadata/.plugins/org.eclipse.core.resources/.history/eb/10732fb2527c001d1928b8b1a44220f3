@@ -1,0 +1,17 @@
+package com.infinite.Interface;
+
+public class Sarathi implements Itraining{
+
+	@Override
+	public void name() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void email() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

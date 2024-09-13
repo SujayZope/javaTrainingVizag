@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+	    <h:body>
+        <h:form>
+                <h2 style="text-align: center" class="col-sm-4">Edit Your Record</h2>
+            <hr/>
+		
+					Book Id
+                    <h:inputText id="id" value="#{editbook.id}" /> <br/>
+                    
+					Book Name
+                    <h:inputText id="name" value="#{editbook.name}" /> <br/>
+					
+					Book Author 
+                    <h:inputText id="city" value="#{editbook.author}" /> <br/>
+					
+					Edition
+                    <h:inputText id="gender" value="#{editbook.edition}" /> <br/>
+					
+					Department
+                    <h:inputText id="mstatus" value="#{editbook.dept}"/> <br/>
+                    
+                    No of Books
+                    <h:inputText id="premium" value="#{editbook.noOfBooks}"/> <br/>
+                    <h:commandButton value="Update" action="#{bookDao.updateAgentDao(editbook)}" />
+                    
+        </h:form>
+    </h:body>
+	
+</html>

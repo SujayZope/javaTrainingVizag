@@ -1,0 +1,26 @@
+package com.infinite.day1;
+
+public class CurrentBill {
+	
+	public void cal(int unit,double billToPay){
+		double rate;
+		if(unit <= 90){
+			rate =1;
+			billToPay=90*rate;
+			rate = 1.5;
+			
+			
+			}
+		
+        System.out.println("The electricity bill for " +unit+ " is : " + billToPay);   
+    }   
+		
+	
+	public static void main(String[] args) {
+		double billToPay = 0;
+		int unit =151;
+		new BillCalculator().cal(unit, billToPay);
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.infinite.Collections;
+
+import java.util.SortedSet;
+
+public class SortStudent {
+
+	public static void main(String[] args) {
+		SortedSet<E> names = new TreeSet();
+		names.add(new Student(1,"Chetan","Pune",9.1))
+	}
+}

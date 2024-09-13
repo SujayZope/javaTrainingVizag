@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	
+
+<style>
+ body {
+	background-image:url("https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg");
+}
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+form{display: block;font-family: arial;width:
+ 700px;color: black;font-style:normal;padding: 10px;margin:
+  10px;margin-left:12%;font-weight:bold;
+   }
+
+</style>
+</h:head>
+<h:body>
+
+<center>
+<h:panelGrid columns="2" border="1" cellpadding="10" cellspacing="1" style="margin-top:50px"  >
+
+	<f:facet name="last">
+	  <h:outputStylesheet library="default" name="css/style.css" />
+	</f:facet>
+
+	
+
+	
+	
+	<h:form>
+	
+	<div style="margin-left:190px"> Create a new password </div><br/>
+
+
+        User Name :
+	   <p:inputText id="userName"  label="username"
+		size="46" readonly="true"
+	    value="#{loginsession.userName}"  >
+	 
+	  </p:inputText>
+	  <p:watermark for="userName" value="userName *" />
+	  <p:message for="userName" />
+      <br/><br/>
+	
+	Password :
+	  <p:password id="passCode" required="true" label="passCode" size="44"
+		requiredMessage="Please enter your New password." 
+		match="confirmPassword" value="#{login.password}" toggleMask="true"
+		maxlength="20">
+		  
+	  </p:password>
+		<p:watermark for="passCode" value="passCode *" />
+		<p:message for="passCode" />
+          <br/><br/>
+    
+    Confirm Password : 
+	  <p:password id="confirmPassword" required="true" size="35"
+		requiredMessage="Please confirm your New password." validatorMessage="password should contain min 8 charactors and must contain one special charactor and one upper and lower case letter"
+		label="confirmPassword" value="#{login.password}" toggleMask="true"
+		maxlength="20">
+		  <f:validateRegex pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" />
+	  </p:password>
+	  <p:watermark for="confirmPassword" value="Type Password Again *" />
+	  <p:message for="confirmPassword" />
+<br/><br/>
+	  <p:commandButton value="Update Password" style="margin-left:210px"
+		action="#{Dao.ForgetPassword(loginsession.userName,login.password)}" ajax="false" />
+
+	  
+	<p>
+		<h:outputLabel value="#{Dao.passerrmsg}"
+		style="color: red; font-weight: bold;"/>
+	</p>
+
+	</h:form>
+	</h:panelGrid>
+</center>
+</h:body>
+</html>

@@ -1,0 +1,10 @@
+127.0.0.1 - - [31/Mar/2023:10:43:48 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:43:50 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:44:22 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:44:23 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:44:24 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:44:24 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+127.0.0.1 - - [31/Mar/2023:10:51:24 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:10:51:25 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992
+127.0.0.1 - - [31/Mar/2023:14:31:49 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [31/Mar/2023:14:31:49 +0530] "GET /HealthPharmacy/Login.jsf HTTP/1.1" 404 992

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ 
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+
+
+<head>
+		
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+		
+		<!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+		
+		<style>
+			
+			body {
+    		margin-top: 10%;
+    		margin-left: 25%;
+    		background : url("image/background_image.jpg");
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    	}
+    	
+    	
+    	.form-class {
+    		width: 800px;
+    		border: solid 3px ;
+    		/* padding-left: 150px; */
+    		text-align: center;
+    	}
+    	
+    	.heading-class {
+    		color: green;
+    		width: 500px;
+    	}
+    	
+    	
+    	input[type=text] {
+    		width: 40%;
+    		margin-left: 30%;
+    		box-shadow: 7px 7px 4px darkgrey;
+    		border-bottom: 2px solid black;
+    		border-right: 2px solid black;
+    		valid: true;
+    	}
+		 
+		</style>
+		
+</head>
+
+
+<body>
+	
+	<h:form styleClass="form-class" >
+		
+		
+		<h2 style="color: green;">Enter Medicine Sale Record</h2> <br />
+		
+		<b>Hospital Name:</b>		
+		<h:selectOneMenu value="#{medical.hospital_id}" class="btn btn-secondary dropdown-toggle">
+			
+			<f:selectItems value="#{providerImpl.getHospitalName()}"/>
+			
+		</h:selectOneMenu>
+		
+		<b>Medical Name:</b>
+		<h:selectOneMenu value="#{medical.medical_id}" class="btn btn-secondary dropdown-toggle">
+			<f:selectItems value="#{pharmacyImpl.getMedicalNameList()}" />
+		</h:selectOneMenu> <br /> <br />
+		
+		
+		
+		<b>Item Name:</b> <!-- value="#{medicalImpl.localCode}" -->
+		<h:selectOneMenu value="#{medical.medicin_name}" onchange="submit()" class="btn btn-secondary dropdown-toggle"
+		valueChangeListener="#{stockImpl.itemIdLocaleCodeChanged}">
+			
+			<f:selectItems value="#{stockImpl.showMenuItemNames()}" />
+			
+		</h:selectOneMenu> <br /> <br />
+		
+		<b>Price : </b> &nbsp;
+        	  <h:outputText id="itemPrice" label="Please Enter Item Name" 
+        	  value="#{stockImpl.getItemprice()}" >
+	  </h:outputText> <br/><br/>
+		
+		
+		<!-- <b>Quantity:</b> <br />
+		<h:inputText value="#{medical.quantity}" id="quantity" styleClass="inputBox-class"
+		required="true" requiredMessage="Please Enter Quantity" validatorMessage="You can not Enter Quantity as Zero">
+			<f:validateLongRange minimum="1" />
+		</h:inputText> <br />
+		<h:message for="quantity" style="color: red"></h:message> <br /> <br />
+		
+		
+		
+		<b>Amount:</b> <br />
+		<h:inputText value="#{medical.amount}" id="amount" styleClass="inputBox-class"
+		required="true" requiredMessage="Please Enter Amount" validatorMessage="You can not Enter Amount as Zero">
+			<f:validateLongRange minimum="1" />
+		</h:inputText> <br /> 
+		<h:message for="amount" style="color: red"/>  <br /><br /> -->
+		
+			
+		<b>Quantity:</b> <br />
+		<h:inputText value="#{medical.quantity}" onchange="submit()" id="quantity" 
+		class="form-control " type="text" 
+		valueChangeListener="#{stockImpl.quantityIdLocaleCodeChanged}" 
+		required="true" requiredMessage="Please Enter Quantity" validatorMessage="You can not Enter Quantity as Zero">
+			
+			<f:validateLongRange minimum="1" />
+			
+		</h:inputText><br />
+		<h:message for="quantity" style="color: red"></h:message> <br /> 
+		
+		<b>Amount:</b> &nbsp;
+		<h:outputText value="#{stockImpl.amountCalculate()}"></h:outputText><br /><br />
+		
+		
+		
+		<b>Patient Id:</b> &nbsp;
+		<!-- <h:inputText value="#{medical.patientid}" class="form-control " type="text" style=""
+		id="pi" required="true" requiredMessage="Please Enter Patient Id" validatorMessage="Patient Id length shoud be min and max 4" >
+			<f:validateLength maximum="4" minimum="4" />
+		</h:inputText> <br />
+		<h:message for="pi" style="color: red"/> <br /><br /> -->
+		
+		<h:selectOneMenu value="#{medical.patientid}" class="btn btn-secondary dropdown-toggle">
+			
+			<f:selectItems value="#{procedureImpl.getRecipientId()}"/>
+			
+		</h:selectOneMenu> <br /> <br />
+		
+		
+		<h:commandButton value="Add To Cart" action="#{medicalImpl.addToCart(medical,stockImpl.getItemprice(),stockImpl.getItemExpDate())}" class="btn btn-info"/>
+		<br /> <br />
+		
+		<h:commandButton value="Make Bill" class="btn btn-success" action="#{medicalImpl.addMedicinSale(medical,stockImpl.getItemprice())}" styleClass="button-class" style="margin-left: 70%;"/>
+		
+		<br /> <br />
+		
+		
+		<h:dataTable value="#{medicalImpl.getM1()}" var="print" border="3" class="table table-success table-striped " >
+			
+			<h:column>
+				<f:facet name="header">medicin_name</f:facet>
+				<h:outputText value="#{print.medicin_name}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">price</f:facet>
+				<h:outputText value="#{print.price}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">quantity</f:facet>
+				<h:outputText value="#{print.quantity}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">amount</f:facet>
+				<h:outputText value="#{print.amount}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Batch no</f:facet>
+				<h:outputText value="#{print.batchno}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Expiry date</f:facet>
+				<h:outputText value="#{print.expDate}" >
+					<f:convertDateTime pattern="MM/yyyy" />
+				</h:outputText>
+			</h:column>
+			
+			<h:column>
+			<f:facet name="header">cancel Item</f:facet>
+			<h:commandButton id="image" action="#{medicalImpl.removeCart(print)}" value="delete">
+			</h:commandButton>
+</h:column>
+			
+			</h:dataTable> <br />
+			
+		Total Amount : 
+        	  <h:outputText 
+        	  value="#{medicalImpl.totalAmmount}" >
+	  </h:outputText> <br/><br/> 
+		
+
+		
+	</h:form>
+</body>
+
+</html>

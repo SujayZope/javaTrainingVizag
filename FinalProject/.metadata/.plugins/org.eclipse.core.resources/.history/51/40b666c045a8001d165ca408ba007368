@@ -1,0 +1,49 @@
+package com.java.pms;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@ManagedBean(name="login")
+@SessionScoped
+@Entity
+@Table(name="login")
+
+public class Login {
+	
+	@Id
+	@Column(name="userName")
+	private String userName;
+	
+	@Column(name="passCode")
+	private String passCode;
+	
+	@Column(name="OtpNo")
+	private long otpNo;
+	
+	@Column(name="status")
+	private String status;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassCode() {
+		return passCode;
+	}
+
+	public void setPassCode(String passCode) {
+		this.passCode = passCode;
+	}
+	
+	
+	
+
+}

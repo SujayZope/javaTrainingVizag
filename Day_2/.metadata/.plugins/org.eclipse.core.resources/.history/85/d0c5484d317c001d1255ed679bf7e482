@@ -1,0 +1,9 @@
+package com.infinite.day_2;
+
+public class EmployShow {
+	public static void main(String[] args) {
+		Employ employ1=new Employee();
+		
+	}
+
+}

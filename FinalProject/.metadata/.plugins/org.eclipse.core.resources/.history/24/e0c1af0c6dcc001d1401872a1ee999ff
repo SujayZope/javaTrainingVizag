@@ -1,0 +1,163 @@
+package infinite.LoginPharmacy;
+
+import java.util.Date;
+import java.util.Map;
+import java.util.Random;
+
+import javax.faces.bean.*;
+import javax.faces.context.FacesContext;
+
+import org.hibernate.*;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+
+import infinite.HealthPharmacy.EntryptPassword;
+import infinite.HealthPharmacy.Login;
+import infinite.HealthPharmacy.OwnerDetail;
+import infinite.HealthPharmacy.SessionHelper;
+
+@ManagedBean(name = "lDao")
+@SessionScoped
+public class LoginDaoImpl implements LoginDao{
+
+	@Override
+	public String validateMe(Login login) {
+		
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		System.out.println("Login Data " + login);
+		
+		cr.add(Restrictions.eq("userName", login.getUserName()));
+		Login loginFound = (Login) cr.uniqueResult();
+		if (loginFound == null) {
+			sessionMap.put("error", "Invalid Credentials...");
+			return "Login.xhtml?faces-redirect=true";
+		}
+		
+		System.out.println("inside  login"+loginFound);
+		
+		if (loginFound.getFlag().equals("No")) {
+			System.out.println("for old user login");
+			String encr = EntryptPassword.getCode(login.getPassword());
+			cr.add(Restrictions.eq("userName", loginFound.getUserName()));
+			cr.add(Restrictions.eq("password", encr.trim()));
+			cr.setProjection(Projections.rowCount());
+			long count = (Long) cr.uniqueResult();
+			try {
+				if (count == 1) {
+					if ((new Date()).before(loginFound.getPassExpiryTime())) {
+					sessionMap.put("userName", loginFound.getUserName());
+					sessionMap.put("home", "Welcome to dashboard page ...");
+					return "HomePage.xhtml?faces-redirect=true";
+					}else{
+						sessionMap.put("err", "your password has expired.....");
+						return "checkUName.xhtml?faces-redirect=true";
+					}
+				}
+				else{
+					sessionMap.put("error", "Invalid Credentials...");
+				}
+
+			} catch (HibernateException|ClassCastException e) {
+				e.printStackTrace();
+
+			}
+		}
+		
+		
+		System.out.println(loginFound.getFlag());
+		if (loginFound.getFlag().equals("Yes")) {
+			System.out.println("inside reset 2");
+			String checkOtp=String.valueOf(loginFound.getOtp()) ;
+			if (checkOtp.equals(login.getPassword())) {
+				System.out.println("otp match");
+					sessionMap.put("userName", loginFound.getUserName());
+					Login login2 = searchByLoginUser(loginFound.getUserName());
+					System.out.println("*****************************");
+					sessionMap.put("err", "First reset password.....");
+					return "reset.xhtml?faces-redirect=true";
+					}
+			else {
+				sessionMap.put("error", "Invalid Credentials...");
+			}
+		
+			
+		}
+
+		return "Login.xhtml?faces-redirect=true";
+	}
+
+	@Override
+	public Login searchByLoginUser(String userName) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		cr.add(Restrictions.eq("userName", userName));
+		Login user = (Login) cr.uniqueResult();
+		System.out.println("Searched......");
+
+		return user;
+	}
+	
+	public OwnerDetail searchByUserId(int userId) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(OwnerDetail.class);
+		cr.add(Restrictions.eq("userId", userId));
+		Login user = (Login) cr.uniqueResult();
+		System.out.println("Searched......");
+
+		return user;
+	}
+	
+	public static int generateOtp() {
+		Random r = new Random(System.currentTimeMillis());
+		return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
+	}
+
+
+
+	@Override
+	public String checkUsername(String username) {
+
+		System.out.println(username);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+
+		Login login = searchByLoginUser(username);
+		OwnerDetail od = searchByUserId(login.getUserId());
+
+		if (login == null) {
+			sessionMap.put("error2", "Invalid Username..Please Enter valid Username..!");
+			return "checkUName.xhtml?faces-redirect=true";
+		} else {
+			sessionMap.put("loginsession", login);
+			System.out.println("login data " + login);
+
+			String maskId = maskMailId(od.getEmail());
+			sessionMap.put("maskIdSession", maskId);
+			sessionMap.put("pharmacysession", login);
+
+			return "sendOtp.xhtml?faces-redirect=true";
+
+		}
+
+	}
+
+	public String maskMailId(String email) {
+
+		int index = email.indexOf("@");
+		String end_id = email.substring(index);
+		String mask = "";
+		int size = email.substring(2, index).length();
+		for (int i = 0; i < size; i++) {
+			mask += "*";
+		}
+		mask = email.substring(0, 2) + mask + end_id;
+		return mask;
+	}
+}
+	
+

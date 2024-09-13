@@ -1,0 +1,79 @@
+package com.infinite.LeaveManagSys;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class EmployeeDaoImpl implements EmployeeDAO{
+
+	static List<LeaveDetails> employeeList;
+	
+	static{
+		employeeList= new ArrayList<LeaveDetails>();
+	}
+	
+	
+
+	@Override
+	public List<LeaveDetails> showLeaveDao() {
+		// TODO Auto-generated method stub
+		return employeeList;
+	}
+
+
+
+	@Override
+	public String addLeaveDao(LeaveDetails e) {
+		// TODO Auto-generated method stub
+		employeeList.add(e);
+		return "successfully added";
+	}
+
+
+
+	@Override
+	public LeaveDetails searchEmpDao(int empno) {
+		
+		LeaveDetails empFound=null;
+		
+		for (LeaveDetails leaveDetails : employeeList) {
+			
+			if(leaveDetails.getEmpId()==empno){
+				empFound=leaveDetails;
+				break;
+			}
+		}
+		return empFound;
+	}
+
+
+
+	@Override
+	public String deletLeaveDao(int empno) {
+		
+		LeaveDetails empFound=searchEmpDao(empno);
+		
+		if(empFound!=null){
+			employeeList.remove(empFound);
+			return "leave deleted succefully";
+		}
+		return "record not found";
+	}
+
+
+
+	@Override
+	public String updateLeaveDao(LeaveDetails n) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+
+
+	
+
+}

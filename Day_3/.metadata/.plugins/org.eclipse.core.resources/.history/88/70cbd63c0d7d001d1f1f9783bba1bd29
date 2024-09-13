@@ -1,0 +1,12 @@
+package com.java.employee;
+
+public class Employee {
+	
+	private int empno;
+	private String name;
+	private Gender gende;
+	private String dept;
+	private String desig;
+	private double basic;
+
+}

@@ -1,0 +1,14 @@
+package com.infinite.day1;
+
+public class BillCalculator {
+	
+	public void cal(int unit){
+		
+	}
+	public static void main(String[] args) {
+		int unit =180;
+		new BillCalculator().cal(unit);
+
+	}
+
+}

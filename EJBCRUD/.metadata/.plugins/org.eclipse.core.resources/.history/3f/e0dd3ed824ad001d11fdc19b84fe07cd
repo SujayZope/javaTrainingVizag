@@ -1,0 +1,26 @@
+package com.java.ejb;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class AddRoom {
+	public static void main(String[] args) throws NamingException, ClassNotFoundException, SQLException {
+		Scanner sc = new Scanner(System.in);
+		Room room = new Room();
+		System.out.println("Enter Room Type  ");
+		room.setType(sc.next());
+		System.out.println("Enter Room Status  ");
+		room.setStatus(RStatus.valueOf(sc.next()));
+		System.out.println("Enter Cost Per Day  ");
+		room.setCostPerDay(sc.nextInt());
+		
+		OyoBeanRemote service = null;
+		    service = (OyoBeanRemote)
+		    		new InitialContext().lookup("OyoBean/remote");
+		    System.out.println(service.addRoomDao(room));
+	}
+
+}

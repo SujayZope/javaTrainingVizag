@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login Page</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+		crossorigin="anonymous" />
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+
+	<style>
+body {
+	background-image:
+		url("https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+
+form {
+	display: block;
+	font-family: arial;
+	width: 500px;
+	color: black;
+	font-style: normal;
+	padding: 10px;
+	margin: 10px;
+	font-weight: bold;
+	 
+}
+</style>
+	<h:body>
+
+
+		<center>
+			<h:panelGrid columns="2" border="2" cellpadding="10" cellspacing="2"
+				style="margin-top:130px" bgcolor="white">
+
+
+
+
+
+				<h:form>
+					<center>
+						<h1>Pharmacy Login</h1>
+						<br />
+
+						<p:outputLabel>User Name :  </p:outputLabel>
+						&nbsp;
+						<p:inputText value="#{login.userName}" styleClass="input-text"
+							id="uname" required="true" requiredMessage="Enter User Name">
+						</p:inputText>
+						<p:watermark for="uname" value="User Name"></p:watermark>
+						<h5 style="color: red;">
+							<p:message for="uname" id="username"></p:message>
+						</h5>
+
+
+						<p:outputLabel>Password : </p:outputLabel>
+						&nbsp;
+						<p:password value="#{login.password}" styleClass="input-text"
+							id="pass" required="true" requiredMessage="Enter Password"
+							alt="password"></p:password>
+
+						<h5 style="color: red;">
+							<p:message for="pass" id="password"></p:message>
+						</h5>
+
+						<p:watermark for="pass" value="Password"></p:watermark>
+						<h:commandButton value="Login" action="#{lDao.validateMe(login)}"
+							class="btn btn-primary" />
+						<br />
+
+						<h6>
+							<h:outputLabel value="#{lDao.errmsg1}"
+								style="color: red; font-weight: bold;" />
+						</h6>
+						<h6>
+							<h:outputLabel value="#{lDao.errmsg2}"
+								style="color: red; font-weight: bold;" />
+						</h6>
+						<h6>
+							<h:outputLabel value="#{lDao.errmsg3}"
+								style="color: red; font-weight: bold;" />
+						</h6>
+</h:form><h:form>
+						<h:commandLink id="newuser" action="Main.xhtml"
+							class="btn btn-light">
+							<h:outputText value="Register New User"></h:outputText>
+						</h:commandLink>
+						&nbsp; &nbsp;
+
+						<h:commandLink id="forgotpass" action="ForgetPass.xhtml"
+							class="btn btn-light">
+							<h:outputText value="Forgot Password"></h:outputText>
+						</h:commandLink>
+
+
+
+
+
+					</center>
+
+			</h:form>
+			</h:panelGrid>
+		</center>
+
+
+	</h:body>
+</h:head>
+</html>

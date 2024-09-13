@@ -1,0 +1,11 @@
+package com.infinite.Collections;
+
+import java.util.ArrayList;
+
+public class ListDemo2 {
+	public static void main(String[] args) {
+		List numbers = new ArrayList();
+		
+	}
+
+}

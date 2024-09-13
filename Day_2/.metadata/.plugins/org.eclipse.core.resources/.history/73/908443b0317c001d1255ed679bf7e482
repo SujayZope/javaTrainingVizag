@@ -1,0 +1,14 @@
+package com.infinite.day_2;
+
+public class EmployShow {
+	public static void main(String[] args) {
+		Employee employ1=new Employee();
+		
+		employ1.empno=1031062;
+		employ1.name="Yogesh";
+		employ1.basic=12334;
+		
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.java.ejb;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="billing")
+public class Billing {
+	
+	@Id
+	@Column(name="BookID")
+	private String BookID;
+	
+	@Column(name="RoomID")
+	private String RoomID;
+	
+	@Column(name="NoOfDays")
+	private int NoOfDays;
+	
+	@Column(name="BillAmt")
+	private int BillAmt;
+	
+	
+
+}

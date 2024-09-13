@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous" />
+	<style>
+body {
+
+/* 	background : url("image/background_image.jpg");
+ */	background : url("image/PharmacyHome_image.jpg");
+	/* background-image:
+		url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c); */
+		
+/* 	 background-color: #f5ffce;
+ */ 
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<br />
+		<h:inputText value="#{sDao.localCode}" id="ent"
+			style="width: 200px; border-radius: 4px;
+		 height: 40px; border: 1px solid black"
+			valueChangeListener="#{sDao.searchSelect}" />&nbsp;
+			<p:watermark for="ent" value="Enter pharmacy Name"></p:watermark>
+		<h:commandButton action="SearchItem.xhtml" value="Enter pharmacy"
+			class="btn btn-primary" />
+		<center>
+			<h1>
+				<h:outputText value="STOCK AVAILABLE" style="color:Darkblue" />
+			</h1>
+
+			<p:dataTable value="#{sDao.showStock()}" var="e"
+				allowUnsorting="true" sortMode="single" resizableColumns="true"
+				widgetVar="stockTable" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink}
+            {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15" paginatorPosition="bottom">
+
+				<p:column headerText="Item Id" sortBy="#{e.itemId}"
+					filterBy="#{e.itemId}">
+					<h:outputText value="#{e.itemId}" />
+				</p:column>
+				
+				<p:column headerText="Pharma Id" sortBy="#{e.pharmId}"
+					filterBy="#{e.pharmId}">
+					<h:outputText value="#{e.pharmId}" />
+				</p:column>
+
+				<!-- <p:column headerText="Pharmacy Name" filterBy="#{e.pharmName}"
+					sortBy="#{e.pharmName}" sortOrder="asc">
+					<h:outputText value="#{e.pharmName}" />
+				</p:column> -->
+				
+				<!-- Fetching Data from Pharmacy Tabale-->
+				<p:column headerText="Pharmacy Name" sortBy="#{pharmaId.pharmaName}"
+					sortOrder="asc">
+					<h:outputText value="#{sDao.findPharmacyName(e.pharmId)}" />
+				</p:column>
+
+				<p:column headerText="Items" sortBy="#{e.itemName}"
+					filterBy="#{e.itemName}">
+					<h:outputText value="#{e.itemName}" />
+				</p:column>
+
+				<p:column headerText="Quantity">
+					<f:facet name="Quantity">Quantity</f:facet>
+					<h:panelGroup rendered="#{sDao.quantity(e.quantity)==1}">
+						<p style="color: red;">
+							<h:outputText value="#{e.quantity}" />
+						</p>
+					</h:panelGroup>
+					<h:panelGroup rendered="#{sDao.quantity(e.quantity)==0}">
+						<h:outputText value="#{e.quantity}" />
+					</h:panelGroup>
+				</p:column>
+
+				<p:column headerText="Price Per/item">
+					<h:outputText value="#{e.price}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header"> Manufatcuring Date</f:facet>
+					<h:outputText value="#{e.mfgDate}">
+						<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Expiry Date</f:facet>
+					<h:panelGroup
+						rendered="#{sDao.expiryDays(e.expiryDate,e.mfgDate)==1}">
+						<p style="color: red;">
+							<h:outputText value="#{e.expiryDate}">
+								<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+							</h:outputText>
+						</p>
+					</h:panelGroup>
+					<h:panelGroup
+						rendered="#{sDao.expiryDays(e.expiryDate,e.mfgDate)==0}">
+						<h:outputText value="#{e.expiryDate}">
+							<f:convertDateTime pattern="MM-yyyy"></f:convertDateTime>
+						</h:outputText>
+					</h:panelGroup>
+				</p:column> 
+				<p:column headerText="Vendor">
+					<h:outputText value="#{e.vendor}" />
+				</p:column>
+			</p:dataTable>
+			<br />
+			<h:commandButton action="AddStock" value="Add New Stock"
+				class="btn btn-success" /><br/><br/>
+		</center>
+	</h:form>
+</h:body>
+</html>

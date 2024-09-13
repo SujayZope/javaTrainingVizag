@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+.login-form label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.login-form input[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+}
+
+
+/* Button In Profile */
+
+.square_btn {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #004000;
+    border: solid 2px #800000;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.square_btn:hover {
+    background: #06A3DA;
+    color: white;
+}
+
+/* Navigation Bar */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #06A3DA;
+	color: #fff;
+	padding: 25px;
+}
+
+.navbar-brand {
+	font-size: 30px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar-nav {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-item {
+	margin-left: 10px;
+}
+
+.nav-link {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.nav-link:hover {
+	background-color: #fff;
+	color: #333;
+}

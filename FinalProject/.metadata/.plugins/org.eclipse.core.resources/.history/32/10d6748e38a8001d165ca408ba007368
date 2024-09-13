@@ -1,0 +1,163 @@
+package com.java.pms;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Random;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+
+
+
+@ManagedBean(name="lDao")
+@SessionScoped
+public class LoginDaoImpl implements LoginDao {
+	
+	private String otp;
+	
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
+	@Override
+	public String validateMe(Login login) {
+		String encr = EntryptPassword.getCode(login.getPassCode());
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		cr.add(Restrictions.eq("userName", login.getUserName()));
+		cr.add(Restrictions.eq("passCode", encr.trim()));
+		cr.setProjection(Projections.rowCount());
+		long count = (Long) cr.uniqueResult();
+		if (count == 1) {
+			return "menu.xhtml?faces-redirect=true";
+		} else {
+			sessionMap.put("error", "Invalid Credentials...");
+			return "Login.xhtml?faces-redirect=true";
+		}
+	}
+
+	@Override
+	public String addUser(Login login) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		String encPwd = EntryptPassword.getCode(login.getPassCode());
+		login.setPassCode(encPwd);
+		Transaction t = session.beginTransaction();
+		session.save(login);
+		t.commit();
+		System.out.println("Record Inserted...");
+		return "Login.xhtml?faces-redirect=true";
+	}
+	
+	static char[] One_Time_Password(int len) {
+		System.out.println("Generating password using random() : ");
+		System.out.print("Your new password is : ");
+		String numbers = "0123456789";
+		Random rndm_method = new Random();
+		char[] password = new char[len];
+		for (int i = 0; i < len; i++) {
+			password[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));
+			}
+		
+    	String str = new String(password);
+    	password.setOtp();
+		
+		return password;
+	}
+
+	@Override
+	public String oneTimePass(String otp) {
+		
+		
+		
+		
+		return null;
+	}
+	
+	void sendMail(){
+
+       	char[] pass= One_Time_Password(6);
+    	String str = new String(pass);
+    	
+
+        // Recipient's email ID needs to be mentioned.
+        String to = "sujayazope@gmail.com";
+
+        // Sender's email ID needs to be mentioned
+        String from = "prasanna.trainer@gmail.com";
+
+        // Assuming you are sending email from through gmails smtp
+        String host = "smtp.gmail.com";
+
+        // Get system properties
+        Properties properties = System.getProperties();
+
+        // Setup mail server
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.ssl.enable", "true");
+        properties.put("mail.smtp.auth", "true");
+
+        // Get the Session object.// and pass username and password
+        javax.mail.Session session = javax.mail.Session.getInstance(properties, new javax.mail.Authenticator() {
+
+            protected PasswordAuthentication getPasswordAuthentication() {
+
+                return new PasswordAuthentication("prasanna.vsp80@gmail.com", "soqdhechjkcchkgl");
+
+            }
+
+        });
+
+        // Used to debug SMTP issues
+        session.setDebug(true);
+
+        try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+            // Set Subject: header field
+            message.setSubject("Pharmacy Login One Time Password");
+
+            // Now set the actual message
+            message.setText(str);
+
+            System.out.println("sending...");
+            // Send message
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        }
+	}
+	
+	
+}

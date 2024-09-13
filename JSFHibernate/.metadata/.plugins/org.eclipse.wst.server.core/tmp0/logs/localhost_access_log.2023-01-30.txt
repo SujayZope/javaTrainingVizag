@@ -1,0 +1,7 @@
+127.0.0.1 - - [30/Jan/2023:09:26:32 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:36 +0530] "GET /CollegeProject/faces/GiveFeedback.xhtml HTTP/1.1" 200 1875
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:36 +0530] "GET /CollegeProject/faces/javax.faces.resource/theme.css?ln=primefaces-aristo HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:44 +0530] "POST /CollegeProject/faces/GiveFeedback.xhtml HTTP/1.1" 200 1962
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:44 +0530] "GET /CollegeProject/faces/javax.faces.resource/theme.css?ln=primefaces-aristo HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:50 +0530] "POST /CollegeProject/faces/GiveFeedback.xhtml HTTP/1.1" 200 2060
+0:0:0:0:0:0:0:1 - - [30/Jan/2023:09:26:50 +0530] "GET /CollegeProject/faces/javax.faces.resource/theme.css?ln=primefaces-aristo HTTP/1.1" 304 -

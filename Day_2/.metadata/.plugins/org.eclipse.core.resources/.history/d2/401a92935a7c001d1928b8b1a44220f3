@@ -1,0 +1,13 @@
+package com.infinite.Collections;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class ListDemo1 {
+	
+	public static void main(String[] args) {
+		List names = new ArrayList();
+		
+	}
+
+}

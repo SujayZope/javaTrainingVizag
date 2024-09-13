@@ -1,0 +1,31 @@
+package com.infinite.day1;
+
+public class CaseDemo1 {
+
+	public void show(int sno){
+		switch(sno){
+		case 1 :
+			System.out.println();
+			break;
+		case 2 :
+			System.out.println();
+			break;
+		case 3 :
+			System.out.println();
+			break;
+		case 4 :
+			System.out.println();
+			break;
+		case 5 :
+			System.out.println();
+			break;
+		default :
+			System.out.println("Invalid choice...");
+			}
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}

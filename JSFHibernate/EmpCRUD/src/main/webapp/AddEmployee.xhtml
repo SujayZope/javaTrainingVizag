@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+		   <h:body>
+      <h1>Add Employee</h1>
+    <h:form>
+        Employee Name : 
+        <h:inputText value="#{emp.name}" /><br/><br/>
+        Employee Department  : 
+		<h:inputText value="#{emp.dept}" /><br/><br/>
+        Employee Designation  :  
+		<h:inputText value="#{emp.desig}" /><br/><br/>
+        Employee Basic :  
+		<h:inputText value="#{emp.basic}" /><br/><br/>
+		
+      	<h:commandButton value="Insert" action="#{eDao.addEmployee(emp)}" />
+        
+        
+      </h:form>
+	</h:body>
+</html>

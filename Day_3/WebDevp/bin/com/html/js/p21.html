@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	var questions = ["1. What is Java", "2. What is OOPS",
+			"3. HTML Stands For", "4. FTP stands for",
+			"5. Difference between scripting/programming"
+		];
+	var questionNo=0;
+	var total = questions.length;
+	function load() {
+		document.getElementById("question").innerHTML=questions[questionNo];
+	}
+	function nextQuestion() {
+		questionNo++;
+		if (questionNo==total) {
+			questionNo=total-1;
+		}
+		load();
+	}
+	function prevQuestion() {
+		questionNo--;
+		if (questionNo < 0) {
+			questionNo = 0;
+		}
+		load();
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="load()">
+	<form name="frmExam">
+		<span id="question"></span>
+		<br/><br/>
+		<input type="button" value="Next" onclick="nextQuestion()" /> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" value="Previous" onclick="prevQuestion()" /> 
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+ <h:body>
+ 
+ <f:facet name="last">
+	  <h:outputStylesheet library="default" name="css/style.css" />
+	</f:facet>
+	
+ <center>
+      <h1>User Login Using OTP</h1><br/><br/>
+<h:form>
+
+	User Name : 
+	<h:inputText value="#{login.userName}"/> <br/><br/>
+	<h:commandButton value="Send Otp" action="#{lDao.searchByLoginUser(login.userName)}"/>
+	<br /><br /> 
+	
+	Enter Otp : 
+	<h:inputText value="#{login.otpNo}"/> <br/><br/> 
+	<h:commandButton value="Submit" action="#{lDao.validateOtp(login)}"/>
+		
+	<p>
+		<h:outputLabel value="#{errorMessage}"/>
+	</p>
+	
+	
+</h:form>
+</center>
+</h:body>
+</html>

@@ -1,0 +1,7 @@
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:ComplaintMSystem,org.eclipse.launchbar.core.descriptorType.default\:EmpCRUD (1),org.eclipse.launchbar.core.descriptorType.default\:EmpCRUD,org.eclipse.launchbar.core.descriptorType.default\:MainProg,org.eclipse.launchbar.core.descriptorType.default\:Tomcat v8.0 Server at localhost,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/faces/FeedbackReport.xhtml,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:CollegeProject,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:ComplaintMSystem,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:EmpCRUD,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HibCmsExs
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:ComplaintMSystem/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/faces/FeedbackReport.xhtml/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:CollegeProject/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:CollegeProject/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HibCmsExs/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost

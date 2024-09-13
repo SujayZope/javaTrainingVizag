@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+</h:body>
+<h:head>
+	<div
+		style="border: 2px solid black; border-radius: 20px; background-color: lightgreen">
+		<p style="font-family: cursive;">
+			For Mr/Mrs
+			<h:outputLabel value="#{pharmacyInfo.ownerName}" style="color:blue" />
+
+			<br /> Comment is added for pharmacy
+			<h:outputLabel value="#{pharmacyInfo.pharmaName}" style="color:green" />
+			Comment is :-
+			<h:outputLabel value="#{pharmacyInfo.comment}" style="color:red" />
+
+			<h:form>
+
+				<p:commandButton value="Cancel" action="PendingPharmaList.xhtml">
+
+				</p:commandButton>
+
+			</h:form>
+
+		</p>
+	</div>
+</h:head>
+</html>

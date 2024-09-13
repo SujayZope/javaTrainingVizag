@@ -1,0 +1,29 @@
+package com.java.ejb;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="room")
+public class Room {
+	
+	@Id
+	@Column(name="RoomID")
+	private String RoomID;
+	
+	@Column(name="Type")
+	private String Type;
+	
+	@Column(name="RoomID")
+	private Status RoomID;
+	
+	@Column(name="CostPerDay")
+	private int CostPerDay;
+	
+	
+
+}

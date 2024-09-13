@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ 
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+		
+	</h:head>
+	
+	<h:form>
+		
+		
+		<p:dataTable id="tblSales" var="sale" value="#{medicalImpl.getM1()}">
+            <f:facet name="header"> Medical Name:
+                <h:outputText value="#{medic.medical_id}"/>
+            </f:facet>
+
+            <p:columnGroup type="header">
+                <p:row>
+                    <p:column colspan="3" headerText="Patient Id: #{medic.patientid}"  style="text-align: left;"></p:column> 
+                    
+                    <p:column colspan="4" headerText="Date: #{medicalImpl.getDate()}" style="text-align: left;"/>
+                </p:row>
+                <p:row>
+                    <p:column colspan="7" headerText="Hospital Name: #{medic.hospital_id}" style="text-align: left;"/>
+<!--                     <p:column colspan="4" headerText="Dr ID: #{medic.dr_id}" style="text-align: left;"/>
+ -->                </p:row>
+                <p:row>
+                	<p:column headerText="Item Name"/>
+                	<p:column headerText="Price" />
+                    <p:column headerText="Batch No"/>
+                    <p:column headerText="Expiry Date"/>
+                    <p:column headerText="Quantity"/>
+                    <p:column headerText="HSN"/>
+                    <p:column headerText="Amount"/>
+                </p:row>
+            </p:columnGroup>
+
+            <p:column>
+                <h:outputText value="#{sale.medicin_name}"/>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{sale.price}"/>
+            </p:column>
+             <p:column>
+                <h:outputText value="#{sale.batchno}"/>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{sale.expDate}" >
+                	<f:convertDateTime pattern="MM/yyyy" />
+                </h:outputText>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{sale.quantity}"/>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{3004}">
+                </h:outputText>
+            </p:column>
+            <p:column>
+                <h:outputText value="#{sale.amount}">
+                </h:outputText>
+            </p:column>
+
+            <p:columnGroup type="footer">
+                <p:row>
+                    <p:column colspan="6" style="text-align:right" footerText="Total:"/>
+                    
+                    <p:column>
+                        <f:facet name="footer">
+                            <h:outputText value="#{medicalImpl.totalAmmount}">
+                                <f:convertNumber type="currency" currencySymbol="₹"/>
+                            </h:outputText>
+                        </f:facet>
+                    </p:column>
+                </p:row>
+            </p:columnGroup>
+
+            <f:facet name="footer">
+                <h:outputText value="No need of Signature"/>
+            </f:facet>
+        </p:dataTable>
+        
+       <h:commandButton value="Sale Medicine" class="btn btn-success" action="EnterMedicin.xhtml" style="margin-left: 85%;"/>
+		
+	</h:form>
+ 
+
+</html>

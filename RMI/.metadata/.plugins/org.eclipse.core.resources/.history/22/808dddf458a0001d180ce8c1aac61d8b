@@ -1,0 +1,11 @@
+import java.rmi.RemoteException;
+
+public class HelloImpl implements Hello {
+
+	@Override
+	public String sayHello() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

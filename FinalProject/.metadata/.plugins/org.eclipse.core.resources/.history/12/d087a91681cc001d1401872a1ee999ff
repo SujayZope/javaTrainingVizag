@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Enter UserName</title>
+	<style>
+body {
+	background-image:
+		url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c);
+}
+
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+
+form {
+	display: block;
+	font-family: arial;
+	width: 550px;
+	color: black;
+	font-style: normal;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 10%;
+	font-weight: bold;
+	 
+}
+</style>
+</h:head>
+<h:body>
+
+	<center>
+		<h:panelGrid columns="1" border="1" cellspacing="1"
+			style="margin-top:50px">
+
+			<f:facet name="last">
+				<h:outputStylesheet library="default" name="css/style.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/all.min-jsf.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+			</f:facet>
+
+ 
+<h:form> 
+
+User Name :
+<p:inputText id="usernametext" required="true" label="Username"
+					requiredMessage="Please enter UserName." value="#{login.userName}"
+					size="35">
+					<f:validator
+						validatorId="infinite.forgetPharmacy.userNameValidator" />
+				</p:inputText>
+				<p:watermark for="usernametext" value="Enter UserName like. an7033 " />
+				<p:message for="usernametext" />
+				<br />
+
+
+				<h:outputLabel value="#{Dao.errmsg}"
+					style="color: red; font-weight: bold;" />
+				<br></br>
+
+				<p:commandButton value="Search" style="margin-left:200px"
+					action="#{lDao.checkUsername(login.userName)}" ajax="false" />
+
+			</h:form>
+		</h:panelGrid>
+	</center>
+</h:body>
+</html>

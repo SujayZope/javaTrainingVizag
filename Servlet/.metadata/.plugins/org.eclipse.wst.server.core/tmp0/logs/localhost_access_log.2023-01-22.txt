@@ -1,0 +1,5 @@
+127.0.0.1 - - [22/Jan/2023:22:18:33 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [22/Jan/2023:22:18:35 +0530] "GET /LeaveManagement/EmployShow.jsp HTTP/1.1" 200 2072
+0:0:0:0:0:0:0:1 - - [22/Jan/2023:22:19:15 +0530] "GET /LeaveManagement/EmployShow.jsp HTTP/1.1" 200 2012
+0:0:0:0:0:0:0:1 - - [22/Jan/2023:22:19:30 +0530] "GET /LeaveManagement/EmployShow.jsp HTTP/1.1" 200 2012
+0:0:0:0:0:0:0:1 - - [22/Jan/2023:22:19:34 +0530] "GET /LeaveManagement/DashBoard.jsp?empId=2000&mgrid=1000 HTTP/1.1" 200 4669

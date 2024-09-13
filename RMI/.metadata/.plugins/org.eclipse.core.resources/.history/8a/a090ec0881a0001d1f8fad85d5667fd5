@@ -1,0 +1,14 @@
+package com.rmi.crud;
+
+import java.rmi.Remote;
+import java.util.List;
+
+public interface Employee extends Remote {
+
+	List<Employee> ShowAllEmployee();
+
+	String addEmployee(Employee emp);
+
+	String searchEmployeeDao(int empId);
+
+}

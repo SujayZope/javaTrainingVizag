@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<h:body>
+
+<h:form>
+
+<h:outputLabel for="searchType" value="Search by Following Options...." />
+<h:selectOneRadio id="searchType" value="#{bookDao.searchType}">
+<f:selectItem itemValue="id" itemLabel="ID" /> 
+<br/><br/>
+
+<f:selectItem itemValue="bookname" itemLabel="Book Name" />
+<f:selectItem itemValue="authorname" itemLabel="Author Name" />
+<f:selectItem itemValue="dept" itemLabel="Department" />
+<f:selectItem itemValue="All" itemLabel="All Books" />
+</h:selectOneRadio>
+<br />
+<h:outputLabel for="searchValue" value="Search Values : " />
+<h:inputText id="searchValue" value="#{bookDao.searchValue}" />
+<br />
+<br />
+
+<h:commandButton value="Search" action="#{bookDao.searchBooks()}" />
+
+</h:form>
+
+<h:dataTable value="#{bookDao.searchBooks()}" var="book" border="8" bgcolor="Cyan">
+
+<h:column>
+<f:facet name="header">ID</f:facet>
+#{book.id}
+</h:column>
+
+<h:column>
+<f:facet name="header">Book Name</f:facet>
+#{book.name}
+</h:column>
+
+<h:column>
+<f:facet name="header">Author</f:facet>
+#{book.author}
+</h:column>
+
+<h:column>
+<f:facet name="header">Department</f:facet>
+#{book.dept}
+</h:column>
+
+</h:dataTable>
+ 
+</h:body>
+
+</html>

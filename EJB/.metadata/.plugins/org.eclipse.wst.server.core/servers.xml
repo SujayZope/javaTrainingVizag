@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-time="1" hostname="localhost" id="JBoss AS 6.x1675311202840" name="JBoss AS 6.x" org.jboss.ide.eclipse.as.core.server.EXPOSE_MANAGEMENT_SERVICE="true" org.jboss.ide.eclipse.as.core.server.IGNORE_LAUNCH_COMMANDS="false" org.jboss.ide.eclipse.as.core.server.attributes.shutdownPollerKey="org.jboss.ide.eclipse.as.core.runtime.server.WebPoller" org.jboss.ide.eclipse.as.core.server.attributes.startupPollerKey="org.jboss.ide.eclipse.as.core.runtime.server.WebPoller" org.jboss.ide.eclipse.as.core.server.deployDirectoryType="metadata" org.jboss.ide.eclipse.as.core.server.serverMode="local" org.jboss.ide.eclipse.as.core.server.userName="admin" runtime-id="JBoss 6.x Runtime" server-type="org.jboss.ide.eclipse.as.60" server-type-id="org.jboss.ide.eclipse.as.60" start-timeout="450" stop-timeout="450" timestamp="5">
+    <list key="modules" value0="EJBDemo::org.eclipse.jst.jee.server:EJBDemo::jst.ejb::3.1" value1="EJBCalc::org.eclipse.jst.jee.server:EJBCalc::jst.ejb::3.1" value2="EjbCalcServlet::org.eclipse.jst.jee.server:EjbCalcServlet::jst.web::2.5" value3="EjbDwp::org.eclipse.jst.jee.server:EjbDwp::jst.web::3.0" value4="EjbEmp::org.eclipse.jst.jee.server:EjbEmp::jst.ejb::3.1"/>
+  </server>
+</servers>

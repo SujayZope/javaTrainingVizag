@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	
+	</h:head>
+<h:body style="background-image:url(../image/pharma.jpg);backdrop-filter: blur(2px);">
+
+	<div
+		style="border: 2px solid black; border-radius: 20px; ">
+		<center>
+
+
+
+			<p style="font-family: cursive;">
+				For Mr/Mrs
+				<h:outputLabel value="#{pharmacyInfo.ownerName}" style="color:red" />
+
+				<br /> There is Some fields are not matched for
+				<h:outputLabel value="#{pharmacyInfo.pharmaName}"
+					style="color:green" />
+				Pharmacy because of that this Pharmacy is not registered, and revert
+				back for modification
+			</p>
+
+			<h:form>
+Add Comment :<br />
+				<p:inputTextarea id="comment"  label="comment"
+					size="40" requiredMessage="comment" value="#{pharmacyInfo.comment}"
+					style="width: 30%; padding: 7px 10px; margin: 5px 0; box-sizing: border-box;color:red"></p:inputTextarea>
+				<p:watermark for="comment" value="comment here *" />
+				<p:message for="comment" />
+<br /><br />
+				<p:commandButton value="Add"
+					action="#{cDao.addComment(pharmacyInfo)}" ajax="false">
+				</p:commandButton>
+				
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<p:commandButton value="Cancel"
+					action="PendingPharmaList.xhtml" ajax="false">
+				</p:commandButton>
+				
+			</h:form>
+			<br />
+
+		</center>
+	</div>
+	</h:body>
+
+</html>

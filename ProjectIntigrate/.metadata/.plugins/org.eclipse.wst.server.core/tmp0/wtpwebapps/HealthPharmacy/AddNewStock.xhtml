@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+<style>
+input[type=text], select, textarea {
+	padding: 12px;
+	border: 2px solid black;
+	border-radius: 4px;
+	resize: vertical;
+	height: 45px;
+	width: 30%
+}
+
+.form-class {
+	width: 800px;
+	border: solid 2px;
+	text-align: center;
+        }
+body {
+/* 	 background-color: #f5ffce; 
+ */  background-image: url("image/background_image.jpg");
+ margin-top: 100px;
+ margin-left: 25%;
+ background-repeat: no-repeat;
+ background-size: cover;                     
+}
+</style>
+</h:head>
+<h:body>
+<h2>
+	<h:outputText value="Add New Stock" style="color:Darkblue" />
+	</h2>
+	<h:form><h5><b> Pharmacy Name :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<h:selectOneMenu value="#{stock.pharmName}" onchange="submit()"
+			valueChangeListener="#{sDao.pharmaIdIdLocaleCodeChanged}"
+		class="btn btn-secondary dropdown-toggle">
+			<f:selectItems value="#{sDao.getPharmacyName()}"></f:selectItems>
+		</h:selectOneMenu><br/>
+ 		<b> Pharmacy Id :
+	<h:outputText id="pharmaId" 
+		 value="#{sDao.getPharmId()}">
+		</h:outputText></b> 
+		</h5>
+		</h:form>
+	<h:form styleClass="form-class" >
+		<br/>
+		<b>	Item Name :</b>&nbsp;
+ 		<h:inputText value="#{stock.itemName}"  id="itm"
+ 		required="true" requiredMessage="Please enter the Items"></h:inputText><br/>
+ 		<h:message for="itm" style="color:red"/>
+ 		<br />
+		<b>	Quantity :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<h:inputText value="#{stock.quantity}"  id="qty"
+			required="true" requiredMessage="Pleas enter Quantity"
+			validatorMessage="Quantity should not be Zero or Negative">
+			<f:validateDoubleRange minimum="1" maximum="10000"/>
+			</h:inputText><br/>
+			<h:message for="qty" style="color:red"/>
+		<br />
+		<b>	Price/item :</b>&nbsp;&nbsp;
+			<h:inputText value="#{stock.price}"  id="price"
+			required="true" requiredMessage="Pleas enter The Price"
+			validatorMessage="Price should not be Zero or Negative">
+			<f:validateDoubleRange minimum="1" maximum="100000"/>
+			</h:inputText><br/>
+			<h:message for="price" style="color:red"/>
+		<br/>
+		<b>Mfg Date :</b>&nbsp;&nbsp;&nbsp;
+		<p:calendar id="calenda" required="true" value="#{stock.mfgDate}"
+			locale="de" yearRange="-2:+50" maxdate="sDao.today" navigator="true"
+			pattern="dd-MM-yyyy" mode="popup"
+			requiredMessage="please select manufactured date">
+		</p:calendar>
+		<p:message for="calenda"></p:message>
+		<br />
+		<b>	Expiry Date :</b>
+		<p:calendar id="calendar" required="true" value="#{stock.expiryDate}"
+			locale="de" yearRange="-0:+50" navigator="true"
+			pattern="dd-MM-yyyy" mode="popup"
+			requiredMessage="please select expiry date">
+		</p:calendar>
+		<p:message for="calendar"></p:message>
+		<br />
+		<b>	Vendor: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<h:inputText value="#{stock.vendor}" id="ven"
+ 		required="true" requiredMessage="Please enter the vender details"></h:inputText><br/>
+ 		<h:message for="ven" style="color:red"/>
+		<br/>
+		<h:commandButton value="Add Stock" action="#{sDao.addStock(stock,sDao.getPharmId())}" 
+		class="btn btn-primary"	style="	margin-left: 15%"
+		></h:commandButton><br/><br/>
+	</h:form><br />
+</h:body>
+</html>

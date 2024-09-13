@@ -1,0 +1,23 @@
+package com.infinite.Interface.Practice;
+
+public class Test implements IOne,ITwo,IThree {
+
+	@Override
+	public void EmpBasic() {
+		System.out.println("987689");
+		
+	}
+
+	@Override
+	public void EmpName() {
+		System.out.println("Yogesh Lagad");
+		
+	}
+
+	@Override
+	public void EmpID() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

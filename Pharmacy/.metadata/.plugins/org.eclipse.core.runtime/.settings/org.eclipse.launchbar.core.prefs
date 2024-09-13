@@ -1,0 +1,11 @@
+configDescList=org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/Login.jsf,org.eclipse.launchbar.core.descriptorType.default\:Tomcat v8.0 Server at localhost,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HealthPharmacy
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Tomcat\ v8.0\ Server\ at\ localhost/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/Login.jsf/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/Login.jsf/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HealthPharmacy/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HealthPharmacy/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HealthPharmacy11/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:HealthPharmacy11/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:PharmacyModule/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:PharmacyModule/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:Tomcat v8.0 Server at localhost

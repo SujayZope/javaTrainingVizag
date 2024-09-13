@@ -1,0 +1,14 @@
+<h1>heyy submit</h1>
+ <script
+ 	src="https://code.jquery.com/jquery-3.6.0.min.js">
+ </script>
+  <% String name = request.getParameter("name"); %>
+    <% String email = request.getParameter("email"); %>
+    
+    <%-- Display retrieved parameters --%>
+    <p>Name: <%= name %></p>
+    <p>Email: <%= email %></p>
+    
+    <script>
+		console.log("my name"+ "<%=name %>");
+    </script>

@@ -1,0 +1,21 @@
+package com.infinite.day1;
+
+public class Ctof {
+
+	public void calc(double c){
+		double f;
+		f=((9*c)/5)+32;
+		System.out.println("Fahrenheit Value  "+f);
+		
+		}
+	public void kelvin(double c){
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double c=37;
+		new Ctof().calc(c);
+
+	}
+
+}

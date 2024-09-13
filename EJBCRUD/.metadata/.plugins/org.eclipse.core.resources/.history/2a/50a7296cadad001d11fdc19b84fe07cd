@@ -1,0 +1,49 @@
+package com.java.ejb;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Projections;
+
+public class OyoDaoImpl implements OyoDao {
+
+	public String generateRoomID() {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr = session.createCriteria(Room.class);
+		cr.setProjection(Projections.max("RoomID"));
+		String str = (String) cr.uniqueResult();
+		if(str==null){
+			return "R001";
+		}
+		String sub = str.substring(1);
+		int rid = Integer.parseInt(sub);
+		rid++;
+		return String.format("R%03d", rid);
+	}
+
+	@Override
+	public String addRoomDao(Room room) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		room.setRoomID(generateRoomID());
+		Transaction t = session.beginTransaction();
+		session.save(room);
+		t.commit();
+		System.out.println("Record Inserted...");
+		return "Data inserted successfully...";
+	}
+	
+	@Override
+	public List<Room> showRoomDao() {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Criteria cr= session.createCriteria(Agent.class);
+		List<Room> agentList = cr.list();
+		return agentList;
+	}
+
+}

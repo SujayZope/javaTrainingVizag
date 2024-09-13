@@ -1,0 +1,24 @@
+package com.infinite.abs;
+
+public class AbsTest {
+	public static void main(String[] args) {
+		Employee[] arr = new Employee[]{
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new DeveloperEmp(7, "Yogesh", 546734)
+				new DeveloperEmp(7, "Yogesh", 546734)
+				new DeveloperEmp(7, "Yogesh", 546734)
+				new DeveloperEmp(7, "Yogesh", 546734)
+		}
+		for (Employee employee : employees){
+			String type = employee.getClass().getSimpleName();
+			
+			if(type.equals("DeveloperEmp")){
+				System.out.println(employee.showEmployee(emp));
+			}
+		}
+	}
+
+}

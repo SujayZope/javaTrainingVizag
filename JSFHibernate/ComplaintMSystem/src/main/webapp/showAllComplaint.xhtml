@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<h:form>
+
+
+		<center>
+			<h2>
+				<h:outputText value="All complaint" />
+			</h2>
+
+			<h:dataTable value="#{comDao.showAllComplaint()}" var="comObj"
+				border="3">
+				<h:column>
+					<f:facet name="header">complaint  ID</f:facet>
+					<h:outputText value="#{comObj.complaintID}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">complaintType</f:facet>
+					<h:outputText value="#{comObj.complaintType}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">cDescription</f:facet>
+					<h:outputText value="#{comObj.cDescription}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">complaintDate</f:facet>
+					<h:outputText value="#{comObj.complaintDate}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Severity</f:facet>
+					<h:outputText value="#{comObj.severity}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">complaint Status</f:facet>
+					<h:outputText value="#{comObj.complaintStatus}" />
+				</h:column>
+
+
+
+				<h:column>
+					<f:facet name="header">Resolve</f:facet>
+					<h:panelGroup rendered="#{comObj.complaintStatus eq 'Pending'}">
+						<h:commandButton id="image-link-id"
+							action="#{comDao.searchcomplaintDao(comObj.complaintID)}"
+							value="Rsolve Complaint">
+						</h:commandButton>
+					</h:panelGroup>
+				</h:column>
+
+
+
+			</h:dataTable>
+		</center>
+
+
+
+		<h:commandLink id="image-link-id" action="Addcomplaint.xhtml">
+			<h:outputText value="Add complaint"></h:outputText>
+		</h:commandLink>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+
+	
+<h:commandLink id="image_link_emps" action="ResolveHistory.xhtml">
+			<h:outputText value="Show complaint history" />
+		</h:commandLink>
+
+
+	</h:form>
+
+</h:body>
+</html>

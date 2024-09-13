@@ -1,0 +1,10 @@
+package com.java.employee;
+
+public class EmployeeBAL {
+
+	static EmployeeDAO dao;
+	
+	static{
+		dao = new EmployeeDaoImp1();
+	}
+}

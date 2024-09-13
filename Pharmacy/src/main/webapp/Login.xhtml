@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</link>
+</head>
+<h:body>
+
+	<f:facet name="last">
+		<h:outputStylesheet library="default" name="css/style.css" />
+	</f:facet>
+
+	<center>
+		<h1>Pharmacy Login</h1>
+		<br />
+		<h:form>
+
+			<!-- <h:inputText value="#{medical.medicin_name}" id="mname"
+				styleClass="inputBox-class" required="true"
+				requiredMessage="Please Enter Medicine Name"
+				validatorMessage="Medicine Name Should contained min 3 letters">    
+				<f:validateLength minimum="3" maximum="30" />
+			</h:inputText> -->
+			<br />
+
+	User Name : 
+	<p:inputText value="#{login.userName}" styleClass="input-text" id="uname" required="true"
+				requiredMessage="Enter User Name" >
+				</p:inputText>
+				<h5 style="color: red;"><p:message for="uname" id="username"></p:message></h5>
+			<br />
+			
+	Password : 
+	<h:inputSecret value="#{login.passCode}" styleClass="input-text" id="pass" required="true"
+				requiredMessage="Enter Password" ></h:inputSecret>
+				<h5 style="color: red;"><p:message for="pass" id="password"></p:message></h5>
+			
+			<br />
+			<h:commandButton value="Login" action="#{lDao.validateMe(login)}"
+				styleClass="submit-btn" />
+			<br />
+			
+
+			<h:commandLink id="newuser" action="signUp.xhtml">
+				<h:outputText value="Register New User"></h:outputText>
+			</h:commandLink>
+	&nbsp; &nbsp; 
+	
+	<h:commandLink id="forgotpass" action="forgot.xhtml">
+				<h:outputText value="Forgot Password"></h:outputText>
+			</h:commandLink>
+
+
+			<p>
+				<h2>
+					<h:outputText value="#{lDao.errmsg}" style="color: red;" />
+				</h2>
+			</p>
+
+		</h:form>
+	</center>
+</h:body>
+</html>

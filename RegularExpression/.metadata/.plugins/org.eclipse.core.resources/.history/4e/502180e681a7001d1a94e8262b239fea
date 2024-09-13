@@ -1,0 +1,26 @@
+package com.java.reg;
+
+import java.util.*;
+
+public class Pass {
+
+	static char[] One_Time_Password(int len) {
+		System.out.println("Generating password using random() : ");
+		System.out.print("Your new password is : ");
+		
+		String numbers = "0123456789";
+		
+
+		String values =numbers;
+
+		Random rndm_method = new Random();
+
+		char[] password = new char[len];
+
+		for (int i = 0; i < len; i++) {
+			password[i] = values.charAt(rndm_method.nextInt(values.length()));
+
+		}
+		return password;
+	}
+}

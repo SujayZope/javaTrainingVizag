@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring accessors="true" comment="Delete element from project &apos;laxman&apos;&#x0D;&#x0A;- Original project: &apos;laxman&apos;&#x0D;&#x0A;- Original element: &apos;html&apos;" description="Delete element" element1="html" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1712240458461" subPackages="false" version="1.0"/>&#x0A;<refactoring comment="Move &apos;index.html&apos; to &apos;webapp&apos;" description="Move &apos;index.html&apos; to &apos;webapp&apos;" destination="src/main/webapp" element1="index.html" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1712240711971" updateReferences="true"/>
+</session>

@@ -1,0 +1,31 @@
+package com.infinite.Interface.Practice;
+
+import com.infinite.Interface.MultiInh;
+
+public class Test implements IOne,ITwo,IThree {
+
+	@Override
+	public void EmpBasic() {
+		System.out.println("This is Basic 987689");
+		
+	}
+
+	@Override
+	public void EmpName() {
+		System.out.println("This is EmpName Yogesh Lagad");
+		
+	}
+
+	@Override
+	public void EmpID() {
+		System.out.println("This is EmpId 1031062");
+		
+	}
+	public static void main(String[] args) {
+		Test obj = new Test();
+		obj.EmpID();
+		obj.EmpName();
+		obj.EmpBasic();
+		}
+
+}

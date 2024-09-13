@@ -1,0 +1,10 @@
+configDescList=org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:,org.eclipse.launchbar.core.descriptorType.default\:JBoss AS 6.x,org.eclipse.launchbar.core.descriptorType.default\:AddRoom,org.eclipse.launchbar.core.descriptorType.default\:BookRoom,org.eclipse.launchbar.core.descriptorType.default\:BillingofRoom,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/OyoCrud,org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:OyoCrud
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:AddRoom/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.eclipse.launchbar.core.descriptorType.default\:JBoss\ AS\ 6.x/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/OyoCrud/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:/OyoCrud/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:JBoss AS 6.x
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:EjbOyoServer/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:EjbOyoServer/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:JBoss AS 6.x
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:OyoCrud/activeLaunchMode=run
+org.jboss.tools.wtp.server.launchbar.ModuleDescriptorType\:OyoCrud/activeLaunchTarget=org.jboss.tools.wtp.server.launchbar.connection\:JBoss AS 6.x

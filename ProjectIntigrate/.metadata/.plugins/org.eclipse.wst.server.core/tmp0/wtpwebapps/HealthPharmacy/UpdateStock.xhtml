@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous" />
+		
+		<style>
+input[type=text], select, textarea {
+	padding: 12px;
+	border: 2px solid black;
+	border-radius: 4px;
+	resize: vertical;
+	height: 45px;
+	width: 30%
+	
+}
+
+.form-class {
+	width: 800px;
+	border: solid 3px;
+	text-align: center;
+        }
+body {
+ 	background : url("image/background_image.jpg");
+ margin-top: 100px;
+ margin-left: 25%;
+ background-repeat: no-repeat;
+ background-size: cover;                     
+}
+</style>
+</h:head>
+<h:body>
+	<h:form  styleClass="form-class" >
+		<h2 style="text-align: center; color: Darkblue">Update Stock</h2><br/>
+		<b> Item Id : </b>
+		<h:outputText value="#{pharmacyInfo.itemId}" />
+		<br />		<br />
+		<b> Pharmacy Name : </b>&nbsp;
+		<h:outputText id="pharmName" value="#{pharmacyInfo.pharmName}" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<br />
+		<br />
+		<b> Item Name : </b>&nbsp;&nbsp;
+		<h:inputText id="itemName" value="#{pharmacyInfo.itemName}" />
+		<br />
+		<br />
+		<b> Quantity : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<h:inputText id="quantity" value="#{pharmacyInfo.quantity}" />
+		<br />
+		<br />
+		<b> Price/item : </b>&nbsp;&nbsp;
+		<h:inputText id="price" value="#{pharmacyInfo.price}" />
+		<br /><br />
+		
+		<b> Mfg Date : </b>&nbsp;&nbsp;&nbsp;
+		<p:calendar id="calenda" required="true"
+			value="#{pharmacyInfo.mfgDate}" locale="de" yearRange="-5:+1" maxdate="sDao.today"
+			navigator="true" pattern="dd-MM-yyyy" mode="popup"
+			requiredMessage="Please Select Manufacturing Date"></p:calendar>
+		<p:message for="calenda"></p:message>
+		<br />
+		<b> Expiry Date : </b>
+		<p:calendar id="calendar" required="true"
+			value="#{pharmacyInfo.expiryDate}" locale="de" yearRange="-0:+50"
+			navigator="true" pattern="dd-MM-yyyy" mode="popup"
+			requiredMessage="Please Select Expiry Date"></p:calendar>
+		<p:message for="calendar"></p:message>
+		<br />
+		<b> Vendor : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<h:inputText id="vendor" value="#{pharmacyInfo.vendor}" />
+		<br />
+		<br />
+		<h:commandButton value=" Update " style="margin-left: 15%"
+			action="#{sDao.updateStock(pharmacyInfo)}" class="btn btn-primary" ></h:commandButton><br/><br/>
+	</h:form><br/>
+</h:body>
+
+</html>

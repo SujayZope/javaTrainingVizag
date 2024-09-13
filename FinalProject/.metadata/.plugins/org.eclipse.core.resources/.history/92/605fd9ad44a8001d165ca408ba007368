@@ -1,0 +1,15 @@
+package com.java.pms;
+
+public interface LoginDao {
+
+	//String authenticate(Login login);
+
+	String validateMe(Login login);
+	
+	String addUser(Login login);
+	
+	String oneTimePass(String otpass);
+	
+	void sendMail();
+
+}

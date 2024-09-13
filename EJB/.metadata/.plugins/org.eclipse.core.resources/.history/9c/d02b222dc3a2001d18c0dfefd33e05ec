@@ -1,0 +1,20 @@
+package com.java.ejb;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class CalcBean
+ */
+@Stateless
+@LocalBean
+public class CalcBean implements CalcBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public CalcBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

@@ -1,0 +1,6 @@
+package com.java.employee;
+
+public class EmployeeDaoImp1 implements EmployeeDAO{
+	
+
+}

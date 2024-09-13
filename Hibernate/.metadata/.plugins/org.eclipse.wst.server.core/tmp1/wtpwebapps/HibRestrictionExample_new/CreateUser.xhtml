@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:form>
+	User Name : 
+	<h:inputText id="userName" value="#{userName}" required="true" requiredMessage="Please Enter UserName"/> <br/><br/>
+	Password : 
+	<h:inputSecret id="password" binding="#{passwordComponent}" value="#{password}"
+		 required="true"
+    requiredMessage="Please enter password" 
+    	validatorMessage="Please enter at least 8 characters">
+    <f:validateLength minimum="8" />
+</h:inputSecret>
+<h:message for="password" />
+
+<h:inputSecret id="confirmPassword" 
+	required="#{not empty passwordComponent.value}"
+    requiredMessage="Please confirm password" 
+    	validatorMessage="Passwords are not equal">
+    <f:attribute name="otherValue" value="#{passwordComponent.value}" />
+</h:inputSecret>
+<h:message for="confirmPassword" />
+	<h:commandButton action="thanks"/>
+	<h:messages/>
+</h:form>
+</html>

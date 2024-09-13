@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="get" action="HelloServlet">
+	First Number : 
+	<input type="number" name="firstNo" /> <br/><br/>
+	Second Number : 
+	<input type="number" name="secondNo" /> <br/><Br/> 
+	<input type="submit" value="Calculiation" />
+</form>
+	<a href="HelloServlet">Hello Servlet</a>
+</body>
+</html>

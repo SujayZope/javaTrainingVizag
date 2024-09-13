@@ -1,0 +1,14 @@
+package infinite.LoginPharmacy;
+
+
+
+public interface LoginDao {
+
+	String validateMe(Login login);
+
+	Login searchByLoginUser(String userName);
+	
+	String checkUsername(String username);
+	
+	OwnerDetail searchByUserId(int userId);
+}

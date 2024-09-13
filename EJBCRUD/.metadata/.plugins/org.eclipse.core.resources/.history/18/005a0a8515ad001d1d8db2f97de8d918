@@ -1,0 +1,20 @@
+package com.java.ejb;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class OyoDaoImpl implements OyoDao {
+
+	@Override
+	public String addRoomDao(Room room) {
+		SessionFactory sf = SessionHelper.getConnection();
+		Session session = sf.openSession();
+		Transaction t=session.beginTransaction();
+	    session.save(room);
+	    t.commit();
+	    System.out.println("Record Inserted...");
+		return "Data inserted successfully";
+	}
+
+}

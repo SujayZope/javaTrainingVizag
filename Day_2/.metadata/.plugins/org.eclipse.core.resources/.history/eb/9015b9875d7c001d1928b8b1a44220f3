@@ -1,0 +1,26 @@
+package com.infinite.Collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListEmployee {
+	
+	public static void main(String[] args) {
+		
+		List empList = new ArrayList();
+		empList.add(new Employee(1,"Chetan",83456));
+		empList.add(new Employee(2,"Chetan",83456));
+		empList.add(new Employee(3,"Chetan",83456));
+		empList.add(new Employee(4,"Chetan",83456));
+		empList.add(new Employee(5,"Chetan",83456));
+		empList.add(new Employee(6,"Chetan",83456));
+		System.out.println("Employee List  ");
+		for(Object object : empList){
+			Employee employee =(Employee)object;
+			System.out.println(employee);
+		}
+		
+		
+	}
+
+}

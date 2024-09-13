@@ -1,0 +1,14 @@
+package com.infinite.abs;
+
+public class AbsTest {
+	public static void main(String[] args) {
+		Employee[] arr = new Employee[]{
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new HrEmployee(1, "Nikhil", 98765),
+				new DeveloperEmp(7, "Yogesh", 546734)
+		}
+	}
+
+}

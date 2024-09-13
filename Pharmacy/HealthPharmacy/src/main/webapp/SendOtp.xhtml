@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui">
+<h:body >
+<head>
+
+</head>
+
+<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+		crossorigin="anonymous" />
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+
+	<style>
+body{
+	background-image: url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c);
+	  display: flex;
+	justify-content: center;
+	margin-top: 5%;
+	align-items: center;
+	
+	  
+	  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-attachment: fixed;
+}
+
+.Full {
+	background: #ffffff;
+	height: 250px;
+	width: 600px;
+}
+
+
+
+
+</style>
+
+
+<f:facet name="last">
+<h:outputStylesheet library="default" name="css/style.css" />
+</f:facet>
+
+<div class="Full">
+
+<center>
+<br/>
+<h3>ENTER REGISTERED EMAIL ID</h3><br/>
+<h5 style="color: red"><h:outputLabel value="#{rDao.e2}"/></h5>
+
+<h:form>
+
+Email  :&nbsp; <p:inputText id="email" required="true" 
+	
+		label="email" 
+		requiredMessage="Enter Registered Email."
+		value="#{ownerDetail.email}" size="20">
+	  </p:inputText>
+	  <p:watermark for="email" value="Enter Registered Email Id" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <p:message for="email" /> <br/>&nbsp;
+<h:commandButton value="Send Otp" action="#{rDao.authenticate(ownerDetail.email)}" class="btn btn-success"/>
+<br />
+
+
+
+
+<h6 style="color: red"><h:outputLabel value="#{rDao.errorMsg}"/></h6>
+
+
+
+</h:form>
+
+
+
+</center>
+</div>
+</h:body>
+</html>

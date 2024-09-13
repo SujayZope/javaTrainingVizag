@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<style>
+
+#pg {
+	font-family: cursive;
+	border: solid #35dc9b 2px;
+	border-radius: 20px;
+	background: #35dc9b;
+	
+}
+
+.pg1 {
+	font-family: cursive;
+	border: 2px solid black;
+	width:1265px;
+	border-radius: 20px;
+	background: #35dc9b;
+	background: linear-gradient(to bottom, #35dc9b, skyblue);
+	display: flex;
+	flex-direction: column;
+	height: auto;
+}
+
+
+.wrapper{
+    
+    border: 1px solid black;
+    box-shadow: 20px -16px ,inset 9em 1em gold;
+	border-radius: 20px;
+    max-width: 1300px;
+   
+    font-family: cursive;
+    text-shadow: 2px 2px skyblue;
+    height: 40px;
+    text-align: right;
+    padding-top: 7px;
+}
+
+.marquee {
+    
+    white-space: nowrap;
+    -webkit-animation: rightThenLeft 4s linear;
+}
+
+
+
+</style>
+</h:head>
+
+<h:body>
+
+	<center>
+		<div class="pg1">
+		<h3 style="text-shadow: 2px 2px skyblue">PHARMACY RECORDS</h3>
+<div class="wrapper">
+<marquee behavior="alternate"><span class="marquee">---- Welcome To Pharmacy Admin Module ----</span></marquee>
+</div>
+
+			<p:dataTable id="pg" value="#{cDao.showPharmacyPendingDAO()}" var="o" dynamic="true"
+				border="4" paginator="true" rows="5" widgetVar="i" 
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink}
+			{PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+				resizableColumns="true" >
+
+				<p:column >
+					<f:facet name="header">Module Type</f:facet>
+					<h:outputText value="#{o.moduleType}" />
+				</p:column>
+
+				<p:column headerText="Owner Name" >
+					
+					<h:outputText value="#{o.ownerName}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">pharma Name</f:facet>
+					<h:outputText value="#{o.pharmaName}" />
+				</p:column>
+
+
+
+				<p:column>
+					<f:facet name="header">email Id</f:facet>
+					<h:outputText value="#{o.email}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">phone No</f:facet>
+					<h:outputText value="#{o.phoneNo}" />
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">status</f:facet>
+
+					<h:panelGroup rendered="#{o.status=='PENDING'}">
+						<p style="color: black;">
+							<h:outputText value="#{o.status}" />
+						</p>
+					</h:panelGroup>
+					
+					<h:panelGroup rendered="#{cDao.calculatBalForColor(o) ge 6 and cDao.calculatBalForColor(o) le 31 and o.status=='REWORK' }">
+						<p style="color: blue;">
+							<h:outputText value="#{o.status}" />
+						</p>
+					</h:panelGroup>
+					
+	
+					<h:panelGroup rendered="#{cDao.calculatBalForColor(o) ge 1 and cDao.calculatBalForColor(o) le 7 and o.status=='REWORK' }">
+						<p style="color: orange;">
+							<h:outputText value="#{o.status}" />
+						</p>
+					</h:panelGroup>
+
+
+					<h:panelGroup rendered="#{cDao.calculatBalForColor(o) le 1 and o.status=='REWORK'}">
+						<p style="color: red;">
+							<h:outputText value="#{o.status}" />
+						</p>
+					</h:panelGroup>
+				</p:column>
+
+
+				<p:column>
+
+					<f:facet name="header">Review</f:facet>
+					<h:form>
+						<h:commandLink action="#{cDao.actionOnPharma(o.userId)}" style="color:green">Review</h:commandLink>
+					</h:form>
+
+				</p:column>
+					   
+
+			</p:dataTable>
+			<br /> <br />
+		</div>
+	</center>
+</h:body>
+</html>

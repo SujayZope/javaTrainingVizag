@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+
+	<h1>Vendor Account Creation</h1>
+	<div style="width: 500px">
+		<h:form>
+			<p:panel id="panel-signup">
+				<!-- enable focus component -->
+				<p:focus context="panel-signup" />
+
+				<p:inputText id="vendorName" required="true"
+					label="Please Enter vendor Name" size="40"
+					requiredMessage="Please enter Vendor name."
+					value="#{vendor.venName}">
+				</p:inputText>
+				
+				
+				<p:watermark for="vendorName" value="vendorName *" />
+				<p:message for="vendorName" />
+
+				<p:inputText id="vendorPhoneNo" required="true"
+					label="Please Enter vendor Phone No" size="40"
+					requiredMessage="Please enter vendor Phone."
+					value="#{vendor.venPhoneNo}">
+				</p:inputText>
+				<p:watermark for="vendorPhoneNo" value="vendorPhoneNo *" />
+				<p:message for="vendorPhoneNo" />
+
+				<p:inputText id="vendorEmail" required="true"
+					label="Please Enter vendor Email" size="40"
+					requiredMessage="Please enter vendor Email."
+					value="#{vendor.venEmail}">
+				</p:inputText>
+				<p:watermark for="vendorEmail" value="vendorEmail *" />
+				<p:message for="vendorEmail" />
+
+
+				<p:inputText id="username" required="true"
+					label="Please Enter UserName" size="40"
+					requiredMessage="Please enter your username."
+					value="#{vendor.venUserName}">
+				</p:inputText>
+				<p:watermark for="username" value="Username *" />
+				<p:message for="username" />
+
+
+				<p:password id="password" required="true" label="password" size="60"
+					requiredMessage="Please enter your password."
+					match="confirmPassword" value="#{vendor.venPassword}"
+					maxlength="20">
+				</p:password>
+				<p:watermark for="password" value="Password *" />
+				<p:message for="password" />
+
+				<p:password id="confirmPassword" required="true" size="40"
+					requiredMessage="Please confirm your password."
+					label="confirmPassword" value="#{confirmPassword}" maxlength="20">
+				</p:password>
+				<p:watermark for="confirmPassword" value="Type Password Again *" />
+				<p:message for="confirmPassword" />
+				<p:commandButton value="Create Account" style="margin:20px"
+					action="#{vDao.addVendorDao(vendor)}" ajax="false" />
+			</p:panel>
+		</h:form>
+	</div>
+</h:body>
+</html>

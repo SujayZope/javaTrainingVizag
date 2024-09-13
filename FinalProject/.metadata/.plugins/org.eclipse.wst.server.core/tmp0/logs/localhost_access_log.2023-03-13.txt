@@ -1,0 +1,15 @@
+127.0.0.1 - - [13/Mar/2023:10:33:13 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:33:15 +0530] "GET /Pharmacy/Login.xhtml HTTP/1.1" 200 3101
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:33:15 +0530] "GET /Pharmacy/javax.faces.resource/jsf.js.xhtml?ln=javax.faces&stage=Development HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:33:33 +0530] "POST /Pharmacy/Login.xhtml HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:33:33 +0530] "GET /Pharmacy/Login.xhtml HTTP/1.1" 200 3140
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:33:33 +0530] "GET /Pharmacy/javax.faces.resource/jsf.js.xhtml?ln=javax.faces&stage=Development HTTP/1.1" 304 -
+127.0.0.1 - - [13/Mar/2023:10:49:08 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:49:09 +0530] "GET /Pharmacy/Login.xhtml HTTP/1.1" 200 3100
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:49:09 +0530] "GET /Pharmacy/javax.faces.resource/jsf.js.xhtml?ln=javax.faces&stage=Development HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:49:35 +0530] "POST /Pharmacy/Login.xhtml HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:49:35 +0530] "GET /Pharmacy/Login.xhtml HTTP/1.1" 200 3140
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:49:35 +0530] "GET /Pharmacy/javax.faces.resource/jsf.js.xhtml?ln=javax.faces&stage=Development HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:52:01 +0530] "POST /Pharmacy/Login.xhtml HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:52:01 +0530] "GET /Pharmacy/Login.xhtml HTTP/1.1" 200 3143
+0:0:0:0:0:0:0:1 - - [13/Mar/2023:10:52:01 +0530] "GET /Pharmacy/javax.faces.resource/jsf.js.xhtml?ln=javax.faces&stage=Development HTTP/1.1" 304 -

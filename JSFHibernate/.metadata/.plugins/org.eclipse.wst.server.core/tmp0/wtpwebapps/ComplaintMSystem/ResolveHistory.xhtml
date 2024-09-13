@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+<h:form>
+
+
+<center>
+<h2>
+<h:outputText value="All complaint History" />
+</h2>
+
+<h:dataTable value="#{comDao.showAllResolveComplaint()}" var="ResObj" border="3">
+<h:column>
+<f:facet name="header">resolve  ID</f:facet>
+<h:outputText value="#{ResObj.resolveID}" />
+</h:column>
+<h:column>
+<f:facet name="header">complaintId</f:facet>
+<h:outputText value="#{ResObj.complaintId}" />
+</h:column>
+<h:column>
+<f:facet name="header">complaintDate</f:facet>
+<h:outputText value="#{ResObj.complaintDate}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">resolveDate</f:facet>
+<h:outputText value="#{ResObj.resolveDate}" />
+</h:column>
+<h:column>
+<f:facet name="header">resolvedBy</f:facet>
+<h:outputText value="#{ResObj.resolvedBy}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">comments</f:facet>
+<h:outputText value="#{ResObj.comments}" />
+</h:column>
+
+<h:column> 
+<f:facet name="header">Turn Around</f:facet>
+<h:panelGroup rendered="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate) ge 0 and comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate) le 6}">
+<p style="color:black">
+ <h:outputText value="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate)}"/>
+ </p>
+ </h:panelGroup>
+ 
+ <h:panelGroup rendered="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate) ge 7 and comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate) le 9}">
+<p style="color:pink">
+ <h:outputText value="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate)}"/>
+ </p>
+ </h:panelGroup>
+ 
+ 
+ <h:panelGroup rendered="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate) ge 10}">
+<p style="color:red">
+ <h:outputText value="#{comDao.calculatedays(ResObj.complaintDate, ResObj.resolveDate)}"/>
+ </p>
+ </h:panelGroup>
+ 
+ 
+ 
+</h:column>
+
+
+
+</h:dataTable>
+</center>
+
+
+
+</h:form>
+
+</h:body>
+</html>

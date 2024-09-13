@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-jdbc.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/com/sun/faces/jsf-api/2.1.7/jsf-api-2.1.7.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/com/sun/faces/jsf-impl/2.1.7/jsf-impl-2.1.7.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/meta-inf/html_basic.tld" project="HealthPharmacy"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/meta-inf/jsf_core.tld" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/meta-inf/mojarra_ext.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/meta-inf/mojarra_ext.tld" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/composite.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/facelets_jsf_core.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/html_basic.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/jstl-core.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/jstl-fn.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/mojarra_ext.taglib.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl-2.1.7.jar/com/sun/faces/metadata/taglib/ui.taglib.xml" project="HealthPharmacy"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-dbcp.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-util-scan.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/3.1.1/jersey-container-servlet-core-3.1.1.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/jersey/core/jersey-common/3.1.1/jersey-common-3.1.1.jar"/>
+  <path value="/Pharmacy/src/main/webapp/WEB-INF/faces-config.xml">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/WEB-INF/faces-config.xml" project="Pharmacy"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="D:/apache-tomcat-8.0.15/lib/jasper.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/primefaces/primefaces/12.0.0/primefaces-12.0.0.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-12.0.0.jar/meta-inf/faces-config.xml" project="HealthPharmacy"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-primefaces-12.0.0.jar/meta-inf/primefaces-p.taglib.xml" project="HealthPharmacy"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="D:/apache-tomcat-8.0.15/lib/servlet-api.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/hk2/hk2-locator/3.0.3/hk2-locator-3.0.3.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-util.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-i18n-fr.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/jersey/core/jersey-server/3.1.1/jersey-server-3.1.1.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-websocket.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/hk2/hk2-api/3.0.3/hk2-api-3.0.3.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/hibernate/hibernate-core/4.3.5.Final/hibernate-core-4.3.5.Final.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/3.0.3/aopalliance-repackaged-3.0.3.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-jni.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/el-api.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/jsp-api.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/websocket-api.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/catalina-ha.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/ecj-4.4.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-i18n-ja.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/3.1.1/jersey-hk2-3.1.1.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-spdy.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-i18n-es.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/catalina.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/jersey/core/jersey-client/3.1.1/jersey-client-3.1.1.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/catalina-tribes.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/catalina-ant.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/jasper-el.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-api.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/annotations-api.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/catalina-storeconfig.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar"/>
+  <path value="D:/apache-tomcat-8.0.15/lib/tomcat-coyote.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/glassfish/hk2/hk2-utils/3.0.3/hk2-utils-3.0.3.jar"/>
+  <path value="C:/Users/sujayz/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar"/>
+ </paths>
+ <validation>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.jsf.core"/>
+  <el>
+   <linked-el length="10" name="%0" offset="1891" path="%1"/>
+   <linked-el length="39" name="%2" offset="1666" path="%3"/>
+   <linked-el length="20" name="%2" offset="1316" path="%4"/>
+   <linked-el length="35" name="%2" offset="2142" path="%5"/>
+   <linked-el length="29" name="%2" offset="1817" path="%1"/>
+   <linked-el length="25" name="%2" offset="1100" path="%6"/>
+   <linked-el length="18" name="%7" offset="1211" path="%4"/>
+   <linked-el length="17" name="%8" offset="935" path="%9"/>
+   <linked-el length="17" name="%10" offset="935" path="%9"/>
+   <linked-el length="20" name="%11" offset="816" path="%6"/>
+   <linked-el length="20" name="%11" offset="1330" path="%3"/>
+   <linked-el length="39" name="%11" offset="1666" path="%3"/>
+   <linked-el length="20" name="%11" offset="1411" path="%5"/>
+   <linked-el length="20" name="%11" offset="1377" path="%1"/>
+   <linked-el length="20" name="%11" offset="1792" path="%5"/>
+   <linked-el length="17" name="%11" offset="902" path="%6"/>
+   <linked-el length="20" name="%11" offset="1316" path="%4"/>
+   <linked-el length="35" name="%11" offset="2142" path="%5"/>
+   <linked-el length="17" name="%11" offset="1481" path="%1"/>
+   <linked-el length="29" name="%11" offset="1817" path="%1"/>
+   <linked-el length="25" name="%11" offset="1100" path="%6"/>
+   <linked-el length="39" name="%12" offset="1666" path="%3"/>
+   <linked-el length="20" name="%12" offset="1316" path="%4"/>
+   <linked-el length="35" name="%12" offset="2142" path="%5"/>
+   <linked-el length="29" name="%12" offset="1817" path="%1"/>
+   <linked-el length="25" name="%12" offset="1100" path="%6"/>
+   <linked-el length="20" name="%13" offset="816" path="%6"/>
+   <linked-el length="20" name="%13" offset="1330" path="%3"/>
+   <linked-el length="39" name="%13" offset="1666" path="%3"/>
+   <linked-el length="20" name="%13" offset="1411" path="%5"/>
+   <linked-el length="20" name="%13" offset="1377" path="%1"/>
+   <linked-el length="20" name="%13" offset="1792" path="%5"/>
+   <linked-el length="17" name="%13" offset="902" path="%6"/>
+   <linked-el length="20" name="%13" offset="1316" path="%4"/>
+   <linked-el length="35" name="%13" offset="2142" path="%5"/>
+   <linked-el length="17" name="%13" offset="1481" path="%1"/>
+   <linked-el length="29" name="%13" offset="1817" path="%1"/>
+   <linked-el length="25" name="%13" offset="1100" path="%6"/>
+   <linked-el length="11" name="%14" offset="2256" path="%5"/>
+   <linked-el length="11" name="%15" offset="1779" path="%3"/>
+  </el>
+ </validation>
+ <aliases>
+  <alias path="err1" value="%0"/>
+  <alias path="/Pharmacy/src/main/webapp/CreateUser.xhtml" value="%6"/>
+  <alias path="/Pharmacy/src/main/webapp/otpLogin.xhtml" value="%1"/>
+  <alias path="maskIdSession" value="%7"/>
+  <alias path="jersey.version" value="%8"/>
+  <alias path="/Pharmacy/src/main/java/com/java/pms/Login.java" value="%11"/>
+  <alias path="/Pharmacy/src/main/java/com/java/pms/LoginDaoImpl.java" value="%12"/>
+  <alias path="/Pharmacy/pom.xml" value="%9"/>
+  <alias path="login" value="%13"/>
+  <alias path="error" value="%14"/>
+  <alias path="/Pharmacy/src/main/webapp/sendOtp2.xhtml" value="%4"/>
+  <alias path="lDao" value="%2"/>
+  <alias path="jersey" value="%10"/>
+  <alias path="/Pharmacy/src/main/webapp/checkUName.xhtml" value="%3"/>
+  <alias path="/Pharmacy/src/main/webapp/Login.xhtml" value="%5"/>
+  <alias path="error2" value="%15"/>
+ </aliases>
+ <includes/>
+ <uris>
+  <uri value="http://java.sun.com/jsf/facelets">
+   <prefix>ui</prefix>
+  </uri>
+  <uri value="http://java.sun.com/jsf/core">
+   <prefix>f</prefix>
+  </uri>
+  <uri value="http://java.sun.com/jsf/html">
+   <prefix>h</prefix>
+  </uri>
+  <uri value="http://primefaces.org/ui">
+   <prefix>p</prefix>
+  </uri>
+ </uris>
+</kb-project>

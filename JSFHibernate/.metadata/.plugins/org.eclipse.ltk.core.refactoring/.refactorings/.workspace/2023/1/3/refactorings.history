@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;HibJoinMany&apos;" deleteContents="false" description="Delete resource &apos;HibJoinMany&apos;" element1="/HibJoinMany" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1674031968581"/>&#x0A;<refactoring comment="Delete resource &apos;HibOneToOne&apos;" deleteContents="false" description="Delete resource &apos;HibOneToOne&apos;" element1="/HibOneToOne" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1674031975726"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Status.java&apos; to &apos;Pharmacy/src/main/java/com.java.pms&apos;&#x0D;&#x0A;- Original project: &apos;HealthPharmacy&apos;&#x0D;&#x0A;- Destination element: &apos;Pharmacy/src/main/java/com.java.pms&apos;&#x0D;&#x0A;- Original element: &apos;infinite.HealthPharmacy.Status.java&apos;" description="Copy compilation unit" destination="=Pharmacy/src\/main\/java&lt;com.java.pms" element1="/src\/main\/java&lt;infinite.HealthPharmacy{Status.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1676970029867" units="1" version="1.0"/>
+</session>

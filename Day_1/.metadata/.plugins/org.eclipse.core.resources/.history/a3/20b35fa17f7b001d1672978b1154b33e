@@ -1,0 +1,17 @@
+package com.infinite.day1;
+
+public class MaxNumThree {
+	public void show(int num1, int num2, int num3){
+		if(num1<num2){
+			if(num1<num3){
+				System.out.println(num1 " is Greater");
+			}else{
+				System.out.println(num3 " is Greater");
+			}
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

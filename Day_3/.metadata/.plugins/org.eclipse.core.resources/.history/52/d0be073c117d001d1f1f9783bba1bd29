@@ -1,0 +1,15 @@
+package com.java.employee;
+
+public class EmployeeBAL {
+
+	static EmployeeDAO dao;
+	
+	static{
+		dao = new EmployeeDaoImp1();
+		sb = new StringBuilder();
+	}
+	
+	public boolean doValid(Employee employee){
+		
+	}
+}

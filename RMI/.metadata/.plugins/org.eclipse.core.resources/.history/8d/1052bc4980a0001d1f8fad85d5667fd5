@@ -1,0 +1,5 @@
+package com.rmi.crud;
+
+public interface Employee {
+
+}

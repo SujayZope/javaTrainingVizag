@@ -1,0 +1,11 @@
+<h1>heyy submit</h1>
+  <% String name = request.getParameter("name"); %>
+    <% String email = request.getParameter("email"); %>
+    
+    <%-- Display retrieved parameters --%>
+    <p>Name: <%= name %></p>
+    <p>Email: <%= email %></p>
+    
+    <script>
+		console.log("<%=name %>");
+    </script>

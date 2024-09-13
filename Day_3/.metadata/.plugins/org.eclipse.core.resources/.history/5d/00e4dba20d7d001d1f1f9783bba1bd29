@@ -1,0 +1,10 @@
+package com.java.employee;
+
+import java.util.*;
+
+public interface EmployeeDAO {
+	
+	List<Employee> showEmployeeDAO();
+	
+
+}

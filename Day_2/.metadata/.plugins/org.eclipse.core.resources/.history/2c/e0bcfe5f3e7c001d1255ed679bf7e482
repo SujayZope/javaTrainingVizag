@@ -1,0 +1,8 @@
+package com.infinite.sup;
+
+public class Second extends First {
+	
+	public void show(){
+		System.out.println("");
+	}
+}

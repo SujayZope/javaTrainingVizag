@@ -1,0 +1,7 @@
+package com.infinite.Interface.Practice;
+
+public interface ITwo {
+	
+	void EmpName();
+
+}

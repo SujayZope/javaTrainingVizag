@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<center>
+	<h2><h:outputLabel value="Employee Records"/></h2>
+	</center>
+	
+	<h:dataTable value="#{employeeDAO.showEmployee()}" var="e" border="3">
+	<h:column>
+	<f:facet name="header" > Employee Number</f:facet>
+	<h:outputLabel value="#{e.empno}"></h:outputLabel>
+	</h:column>
+	<h:column>
+	<f:facet name="header" > Employee Name</f:facet>
+	<h:outputLabel value="#{e.name}"></h:outputLabel>
+	</h:column>
+	<h:column>
+	<f:facet name="header" > Department</f:facet>
+	<h:outputLabel value="#{e.dept}"></h:outputLabel>
+	</h:column>
+	<h:column>
+	<f:facet name="header" > Designation</f:facet>
+	<h:outputLabel value="#{e.desig}"></h:outputLabel>
+	</h:column>
+	<h:column>
+	<f:facet name="header" > Basic</f:facet>
+	<h:outputLabel value="#{e.basic}"></h:outputLabel>
+	</h:column>
+	
+	</h:dataTable>
+	
+	
+</html>

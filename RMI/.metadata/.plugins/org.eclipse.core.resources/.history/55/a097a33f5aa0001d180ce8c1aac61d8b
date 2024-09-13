@@ -1,0 +1,11 @@
+import java.rmi.Naming;
+
+public class ClientProg {
+	
+	public static void main(String[] args) {
+		Hello hello = (Hello)Naming.lookup("localhost");
+		System.out.println("Client Programming...");
+		System.out.println("Server" +hello.sayHello());
+	}
+
+}

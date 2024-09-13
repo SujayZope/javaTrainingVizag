@@ -1,0 +1,9 @@
+package com.infinite.day1;
+
+public class Demo {
+	
+	public void sayHello() {
+		System.out.println("Welcome to java Programming...");
+	
+	}
+}

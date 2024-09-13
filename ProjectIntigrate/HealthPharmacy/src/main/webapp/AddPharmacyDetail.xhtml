@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+ <title>Pharmacy Enrollment form</title>
+<style >
+
+body{
+	background-image: url(https://lh3.googleusercontent.com/BH15N4oRLVsj3JEAPDdHUush1MFXgyk6XHfVbsSR_G16RDo1anNatj3wYzdprGZ_L9q_mcm8HA2Zkz4ET0pnhobwyB9u5pOE-BuHP7c);
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-attachment: fixed;
+	  
+ 
+  
+  
+}
+     
+label{  width:200px;
+        display: inline-block;
+        text-align: ;
+        }
+   
+ form {
+    width: 63%;
+    align:left;
+  background: gray;
+  margin: 0 auto;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+
+
+
+  
+
+
+
+</style>
+
+</h:head>
+<h:body   >
+	<f:facet name="last" >
+	  <h:outputStylesheet library="default" name="css/style.css"  />
+	</f:facet> 
+	
+	
+
+	<h1 style= "position: absolute;top: 30px;left:330px; "> ENROLL PHARMACY</h1>
+	<div >
+	<h:form style="background-color:aqua;font-weight:bold;  "  >
+	  <p:panel id="panel-signup">
+          <!-- enable focus component -->
+	    <p:focus context="panel-signup" />
+	    
+     <br/><br/>
+    
+
+	  <label>Owner Name : </label><p:inputText id="ownerName" required="true" 
+		placeholder="Enter Owner Name."
+		label="ownerName" 
+		requiredMessage="Enter Owner Name."
+		value="#{ownerDetail.ownerName}" size="40">
+	  </p:inputText>
+	  <p:watermark for="ownerName" value="Enter Owner Name" />
+	  <p:message for="ownerName" /> <br/><br/>
+	  
+	 
+	  
+	  <label>Gender: </label>
+	  <p:selectOneMenu id="gender" value="#{ownerDetail.gender}" required="true" 
+	  label="gender" requiredMessage="Please select gender" >
+	                
+	                <f:selectItem itemLabel="--Select--" itemValue="" noSelectionOption="true"/>
+					<f:selectItem itemLabel="Male" itemValue="MALE"/>
+					<f:selectItem itemLabel="Female" itemValue="FEMALE"/>
+					<f:selectItem itemLabel="Other" itemValue="OTHER"/>
+				</p:selectOneMenu> 
+				<p:message for="gender"/><br/><br/>
+	  
+       
+      
+	  
+	 <label>Phone No :</label><p:inputText id="phoneNo" required="true" 
+	  	label="PhoneNo"
+		requiredMessage="Enter Phone No."
+		value="#{ownerDetail.phoneNo}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.PhoneNoValidator" />
+	  </p:inputText>
+	  <p:watermark for="phoneNo" value="Enter Phone No " />
+	  <p:message for="phoneNo"/><br/><br/>
+	  
+	 <label>Email Id :</label><p:inputText id="email" required="true" 
+	  	label="Email Id"
+		requiredMessage="Enter Email Id."
+		value="#{ownerDetail.email}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.EmailValidator" />
+	  </p:inputText>
+	  <p:watermark for="email" value="Enter Email Id " />
+	  <p:message for="email"/><br/><br/>
+
+        <label>Pan Card No:</label><p:inputText id="panCardNo" required="true" 
+	  	label="Please Enter PAN Card No "
+		requiredMessage="Enter PAN Card No."
+		value="#{ownerDetail.panCardNo}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.PanCardValidator" />
+	  </p:inputText>
+	  <p:watermark for="panCardNo" value="Enter Pan Card No" />
+	  <p:message for="panCardNo" /><br/><br/>
+	  
+	  <label>Aadhar Card No:</label><p:inputText id="aadharNo" required="true" 
+	  	label="Please Enter Aadhar No "
+		requiredMessage="Enter Aadhar No."
+		value="#{ownerDetail.aadharNo}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.AadharNoValidator" />
+	  </p:inputText>
+	  <p:watermark for="aadharNo" value="Enter Aadhar Card No" />
+	  <p:message for="aadharNo" /><br/><br/>
+	  
+	
+				
+	<label>Education:</label>
+	  <p:selectOneMenu id="education" value="#{ownerDetail.degree}" required="true" 
+	  label="education" requiredMessage="Please select Your Education" >
+	                
+	                <f:selectItem itemLabel="--Select--" itemValue="" noSelectionOption="true"/>
+					<f:selectItem itemLabel="DEPLOMA_IN_PHARMACY" itemValue="DEPLOMA_IN_PHARMACY"/>
+					<f:selectItem itemLabel="BACHOLOR_IN_PHARMACY" itemValue="BACHOLOR_IN_PHARMACY"/>
+					<f:selectItem itemLabel="MASTER_IN_PHARMACY" itemValue="MASTER_IN_PHARMACY"/>
+				</p:selectOneMenu>
+				<p:message for="education"/><br/><br/>
+				
+				
+	  
+	   <label>Passing Date:</label><p:calendar id="passingDate" required="true"
+					value="#{ownerDetail.passingDate}" locale="de" pattern="dd-MM-yyyy"
+					navigator="true" yearRange="-100:+0" mode="popup" maxdate="#{rDao.maxDate()}"
+					requiredMessage="Select Passing date"
+					size="40"
+					></p:calendar> <p:watermark for="passingDate" value="DD-MM-YYYY" />
+					<p:message for="passingDate" /><br/><br/>
+				
+	  
+	  <label>Pharmacy Name :</label><p:inputText id="pharmaName" required="true" 
+	  	label="Enter Pharmacy Name"
+		requiredMessage="Enter Pharmacy Name."
+		value="#{pharmacy.pharmaName}" size="40">
+	  </p:inputText>
+	  <p:watermark for="pharmaName" value="Enter Pharmacy Name " />
+	  <p:message for="pharmaName" /><br/><br/>
+	  
+				
+	 <label>Licence Type:</label>
+	  <p:selectOneMenu id="lic" value="#{pharmacy.licenceType}" required="true" 
+	  label="lic" requiredMessage="Select Licence Type" >
+	                
+	                <f:selectItem itemLabel="--Select--" itemValue="" noSelectionOption="true"/>
+					<f:selectItem itemLabel="PHARMACIST" itemValue="PHARMACIST"/>
+					<f:selectItem itemLabel="PHARMACY_TECHNICIAN" itemValue="PHARMACY_TECHNICIAN"/>
+					<f:selectItem itemLabel="RETAIL_DRUG_STORE_PERMIT" itemValue="RETAIL_DRUG_STORE_PERMIT"/>
+					<f:selectItem itemLabel="WHOLESALE_DRUG_STORE_PERMIT" itemValue="WHOLESALE_DRUG_STORE_PERMIT"/>
+				</p:selectOneMenu> 
+				<p:message for="lic"/><br /><br />
+				
+	  
+	  <label>Pharmacy Address:</label><p:inputText id="address" required="true" 
+	  	label="Enter Pharmacy Address "
+	  	style="height:60px;"
+		requiredMessage="Enter Pharma Address"
+		value="#{pharmacy.address}" size="32">
+	  </p:inputText>
+	  <p:watermark for="address" value="Enter Pharmacy Address" />
+	  <p:message for="address" /><br/><br/>
+	  
+	  
+	  <label>Pin Code :</label><p:inputText id="pinCode" required="true" 
+	  	label="Please Enter Pin Code "
+		requiredMessage="Enter Pin Code."
+		value="#{pharmacy.pinCode}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.PinCodeValidator" />
+	  </p:inputText>
+	  <p:watermark for="pinCode" value="Enter Pin Code" />
+	  <p:message for="pinCode" /><br/><br/>
+
+	
+	  <label>Licence No :</label><p:inputText id="licenceNo" required="true" 
+	  	label="Please Enter Licence No "
+		requiredMessage="Enter Licence No."
+		value="#{pharmacy.licenceNo}" size="40">
+	  </p:inputText>
+	  <p:watermark for="licenceNo" value="Enter Licence No" />
+	  <p:message for="licenceNo" /><br/><br/>
+	  
+	 
+	  <label>GST No :</label><p:inputText id="gstNo" required="true" 
+	  	label="Please Enter GST No "
+		requiredMessage="Enter GST No."
+		value="#{pharmacy.gstNo}" size="40">
+		<f:validator validatorId="infinite.EnrollPharmacy.GSTNoValidator" />
+	  </p:inputText>
+	  <p:watermark for="gstNo" value="Enter GST No" />
+	  <p:message for="gstNo" /><br/><br/>
+	  
+	  <label>Shop Act No :</label><p:inputText id="shopActNo" required="true" 
+	  	label="Please Enter Shop Act No "
+	    requiredMessage="Enter Shop Act No."
+		value="#{pharmacy.shopActNo}" size="40">
+	  </p:inputText>
+	  <p:watermark for="shopActNo" value="Enter Shop Act No" />
+	  <p:message for="shopActNo" /><br/><br/>
+	  
+	 <center>
+	  
+	  <p:commandButton value="Add Pharmacy Details" 
+		action="#{rDao.AddPharmacyDetail(login,pharmacy,ownerDetail)}" ajax="false"
+		style="width: 30%;background-color: #4CAF50; align color: red; padding: 12px 10px; margin: 8px 0;border: none; cursor: pointer; box-sizing: border-box;" />
+		
+		</center>
+		
+		<center>
+<h4 style="color:Tomato;"><h:outputLabel value="#{rDao.errMeg}"/></h4>
+ </center>
+		
+	  </p:panel>
+	</h:form>
+	</div>
+</h:body>
+</html>

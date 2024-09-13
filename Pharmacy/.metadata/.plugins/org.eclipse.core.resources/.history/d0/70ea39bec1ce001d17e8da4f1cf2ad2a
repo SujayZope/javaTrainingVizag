@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>OTP</title>
+	<style>
+body {
+	background-image:
+		url("https://c0.wallpaperflare.com/preview/99/0/27/medicine-pills-prescription-healthcare.jpg");
+		
+		background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	
+	display: flex;
+	justify-content: center;
+	margin-top: -2%;
+	align-items: center;
+}
+
+input[type=text]:focus {
+	transition: width 0.4s ease-in-out;
+}
+
+form {
+	display: block;
+	font-family: arial;
+	width: 600px;
+	color: black;
+	font-style: normal;
+	padding: 10px;
+	
+	font-weight: bold;
+	
+	 
+}
+</style>
+</h:head>
+<h:panelGrid columns="2" border="1" cellpadding="10" cellspacing="1"
+			style="margin-top:50px" bgcolor="white">
+<h:body>
+	<center>
+		
+
+
+			<f:facet name="last">
+				<h:outputStylesheet library="default" name="css/style.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/all.min-jsf.css" />
+				<h:outputStylesheet library="webjars"
+					name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+			</f:facet>
+
+
+
+
+
+
+			<h:form>
+
+				<h3></h3>
+
+				<h4>
+					We have sent your otp to :
+					<h:outputLabel value="#{maskIdSession}"></h:outputLabel>
+				</h4>
+				<p>
+					Please check your email for a message with your code. <br />Code
+					is 5 numbers long.
+				</p>
+				<br />
+						
+	UserName :
+	<p:inputText id="usernametext" label="Username" readonly="true"
+					requiredMessage="Please enter UserName."
+					value="#{loginsession.userName}" size="35">
+				</p:inputText>
+				<br />
+				<br />		
+
+					
+
+							
+	
+    Enter OTP :
+	<p:password id="otptext" value="#{login.otp}" maxlength="5"
+					toggleMask="true" size="32" required="true"
+					requiredMessage="Please enter Otp">
+				</p:password>
+				<br />
+				<p:watermark for="otptext" value="Enter otp*" />
+				<p:message for="otptext" />
+				<br />
+				<p>
+					<h:outputLabel value="#{lDao.otperrmsg}"
+						style="color: red; font-weight: bold;" />
+				</p>
+
+
+
+				<p:commandButton value="Submit OTP " style="margin-left:120px"
+					action="#{lDao.validateOtp(login,loginsession.userName)}"
+					ajax="false" />
+</h:form><h:form>
+				<p:commandButton value="Resend OTP " style="margin-left:45px"
+					action="#{lDao.ResendOtp(ownwerdetailsession.email,loginsession.userName)}"
+					ajax="false" />
+		
+		
+		 
+							 
+
+ </h:form>
+
+		
+	</center>
+
+
+
+</h:body>
+</h:panelGrid>
+</html>

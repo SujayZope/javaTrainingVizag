@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.12.6/dist/umd/popper.min.js"
+	integrity="sha384-/0j2PjTb9/KjJh/0fU6e1u6lSjV7OuGKP8o7/v+m4XFhKj6DUx7PA+Bb6zS7VuS"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+	integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+	crossorigin="anonymous" />
+</head>
+
+
+<body style="background-color: #D9E6EE">
+	<center>
+
+		<h:form>
+			<br />
+			<br />
+      Subject Names:
+      <h:selectOneMenu value="#{sDao.localCode}" onchange="submit()"
+				valueChangeListener="#{sDao.eventLocalCodeChanged}">
+				<f:selectItem itemValue="PC Architecture" />
+				<f:selectItem itemValue="PC Hardware 1" />
+				<f:selectItem itemValue="PC Hardware 2" />
+				<f:selectItem
+					itemValue="Microprocessor Interfacing devices and Embedded System" />
+				<f:selectItem itemValue="C#" />
+				<f:selectItem itemValue="Data Structures" />
+				<f:selectItem itemValue="Operating System" />
+				<f:selectItem itemValue="SQL Serve" />
+				<f:selectItem itemValue="Networking" />
+				<f:selectItem itemValue="Advance Computer Concept and Data Securit" />
+				<f:selectItem itemValue="Value Added Services" />
+			</h:selectOneMenu>
+			<br />
+			<br />
+			<hr></hr>
+			<br />
+
+Practicals:
+<h:inputText id="practical" value="#{sDao.practical}" readonly="true"></h:inputText>
+			<br />
+			<br />
+   Theory:
+<h:inputText id="theory" value="#{sDao.theory}" readonly="true"></h:inputText>
+			<br />
+			<br />  
+Year:
+<h:inputText id="year" value="#{subject.year}"></h:inputText>
+			<br />
+			<br />   
+Instructor:
+<h:inputText id="instruc" value="#{subject.instructor}"></h:inputText>
+			<br />
+			<br />
+
+			<h:commandButton value="Insert"
+				action="#{sDao.addSubjectDao(subject,sDao.theory,sDao.practical,sDao.localCode)}"></h:commandButton>
+
+		</h:form>
+	</center>
+</body>
+</html>

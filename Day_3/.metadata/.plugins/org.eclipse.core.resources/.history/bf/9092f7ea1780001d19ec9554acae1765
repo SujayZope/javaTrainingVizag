@@ -1,0 +1,40 @@
+package com.infinite.LeaveManagSys;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class EmployeeDaoImpl implements EmployeeDAO{
+
+	static List<Employee> employeeList;
+	
+	static{
+		employeeList= new ArrayList<Employee>();
+	}
+	
+	
+
+	@Override
+	public List<Employee> showLeaveDao() {
+		// TODO Auto-generated method stub
+		return employeeList;
+	}
+
+
+
+	@Override
+	public String addLeaveDao(Employee e) {
+		// TODO Auto-generated method stub
+		employeeList.add(e);
+		return "successfully added";
+	}
+
+
+
+
+
+
+
+	
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+		  <head>
+		  <link rel="stylesheet" href="https://unpkg.com/primeflex@2.0.0/primeflex.css"/><style>
+body {
+    background-image: url(#{request.contextPath}/image/img3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    position: absolute;
+} body .ui-panel .ui-panel-content  {
+    background-color: AZURE;
+    color: #fff;
+}</style>
+</head>
+		  
+		   <h:body>
+      <h1>Create user</h1>
+    <h:form>
+        UserName : 
+        <h:inputText value="#{login.userName}" />        <br/><br/>
+        Email :
+        <h:inputText value="#{login.eMail}" />        <br/><br/>
+      <!--  Passcode :
+        <h:inputSecret value="#{login.passCode}" />        <br/><br/> -->
+        
+          <h:commandButton value="adduser" action="#{lDao.addUser(login)}" />
+      </h:form>
+	</h:body>
+</html>

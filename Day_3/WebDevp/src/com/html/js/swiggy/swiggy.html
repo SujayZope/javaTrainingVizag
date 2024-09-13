@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ 
+
+<style>
+body {
+    background-image: url('im2.jpg');
+    background-position : center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ 
+
+/* .flex-container {
+  display: flex;
+} */
+</style>
+
+ 
+
+<script>
+    var rest = [ "madina", "sunrise" ];
+    var restTemp = [ "madina", "sunrise" ];
+
+ 
+
+    var pic = [ "url('im1.jpg')", "url('im2.jpg')" ];
+
+ 
+
+    var restno = rest.length;
+
+ 
+
+    var madina = [ [ "shahi panner", 230 ], [ "kurma", 340 ],
+            [ "biryani", 400 ], [ "veg kofta", 210 ], [ "shev bhaji", 150 ],
+            [ "kachori", 50 ], [ "chciken samosa", 120 ], [ "bheja fry", 500 ] ];
+
+ 
+
+    var sunrise = [ [ "mashrum", 100 ], [ "thali", 130 ], [ "bhel", 40 ],
+            [ "mix veg", 190 ], [ "veg kolhapuri", 150 ],
+            [ "sunrise spl", 240 ]
+
+ 
+
+    ]
+
+ 
+
+    var rest = [ madina, sunrise ];
+
+ 
+
+    var hotelno = 0;
+
+ 
+
+    function OnLoading() {
+
+ 
+
+        document.getElementById("resname").innerHTML = "<h3>"
+                + restTemp[hotelno] + "<h3/>";
+
+ 
+
+        //document.body.style.backgroundImage = "url('img_tree.png')";
+
+ 
+
+        document.body.style.backgroundImage = pic[hotelno];
+
+ 
+
+        
+        document.getElementById("item1").innerHTML = rest[hotelno][0][0];
+        document.getElementById("item2").innerHTML = rest[hotelno][1][0];
+        document.getElementById("item3").innerHTML = rest[hotelno][2][0];
+        document.getElementById("item4").innerHTML = rest[hotelno][3][0];
+        document.getElementById("item5").innerHTML = rest[hotelno][4][0];
+
+ 
+
+        document.getElementById("p1").innerHTML = rest[hotelno][0][1];
+        document.getElementById("p2").innerHTML = rest[hotelno][1][1];
+        document.getElementById("p3").innerHTML = rest[hotelno][2][1];
+        document.getElementById("p4").innerHTML = rest[hotelno][3][1];
+        document.getElementById("p5").innerHTML = rest[hotelno][4][1];
+
+ 
+
+        document.getElementById("c1").value = rest[hotelno][0][1];
+        document.getElementById("c2").value = rest[hotelno][1][1];
+        document.getElementById("c3").value = rest[hotelno][2][1];
+        document.getElementById("c4").value = rest[hotelno][3][1];
+        document.getElementById("c5").value = rest[hotelno][4][1];
+
+ 
+
+        document.getElementById("c1").checked = false;
+        document.getElementById("c2").checked = false;
+        document.getElementById("c3").checked = false;
+        document.getElementById("c4").checked = false;
+        document.getElementById("c5").checked = false;
+
+ 
+
+        document.getElementById("xyz").innerHTML = "TOTAL=" + "000";
+
+ 
+
+    }
+
+ 
+
+    function totalIt() {
+        var input = document.getElementsByName("price");
+        var total = 0;
+
+ 
+
+        for (var i = 0; i < input.length; i++) {
+            if (input[i].checked) {
+                total += parseInt(input[i].value);
+
+ 
+
+            }
+        }
+
+ 
+
+        document.getElementById("xyz").innerHTML = "TOTAL=" + total;
+    }
+
+ 
+
+    function next() {
+
+ 
+
+        hotelno++;
+        document.getElementById("xyz").innerHTML = "TOTAL=" + "000";
+        document.getElementsByName("price").checked = false;
+        OnLoading();
+    }
+</script>
+
+ 
+
+ 
+
+ 
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="OnLoading()">
+
+ 
+
+    <div id="main" class="flex-container">
+
+ 
+
+ 
+
+        <div id="resname"></div>
+
+ 
+
+        <div id="a">
+<p id="rest"></p>
+<form name="frmdata" action="">
+<table border="2" align="center">
+<tr>
+
+ 
+
+                        <th>Menu</th>
+<th>Price</th>
+<th>Choose</th>
+</tr>
+<tr>
+<td id="item1"></td>
+<td id="p1" value=""></td>
+<td><input id="c1" name="price" type="checkbox"
+                            onclick="totalIt()" value=""></td>
+
+ 
+
+
+</tr>
+<tr>
+<td id="item2"></td>
+<td id="p2" value=""></td>
+<td><input id="c2" name="price" type="checkbox"
+                            onclick="totalIt()" value=""></td>
+
+ 
+
+
+</tr>
+<tr>
+<td id="item3"></td>
+<td id="p3" value=""></td>
+<td><input id="c3" name="price" type="checkbox"
+                            onclick="totalIt()" value=""></td>
+
+ 
+
+
+</tr>
+<tr>
+<td id="item4"></td>
+<td id="p4" value=""></td>
+<td><input id="c4" name="price" type="checkbox"
+                            onclick="totalIt()" value=""></td>
+
+ 
+
+
+</tr>
+<tr>
+<td id="item5"></td>
+<td id="p5" value=""></td>
+<td><input id="c5" name="price" type="checkbox"
+                            onclick="totalIt()" value=""></td>
+
+ 
+
+
+</tr>
+
+ 
+
+
+</table>
+
+ 
+
+ 
+
+
+</form>
+
+ 
+
+            <div align="center">
+
+ 
+
+                <input type="button" value="next" onclick="next()" /> <label
+                    id="item1"></label>
+
+ 
+
+
+</div>
+
+ 
+
+ 
+
+
+</div>
+<div align="center">
+
+ 
+
+            <label id="xyz"> </label>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+</body>
+</html>

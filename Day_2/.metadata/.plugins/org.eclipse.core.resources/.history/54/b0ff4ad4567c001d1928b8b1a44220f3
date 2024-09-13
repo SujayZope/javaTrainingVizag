@@ -1,0 +1,6 @@
+package com.infinite.Interface.Practice;
+
+public interface IThree {
+
+	void EmpBasic();
+}
